@@ -489,12 +489,12 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
             <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
               <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
                 <img 
-                  src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000" 
-                  alt="Git" 
+                  src="https://img.icons8.com/?size=100&id=iWw83PVcBpLw&format=png&color=000000" 
+                  alt="Canva" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="font-semibold text-gray-800">Git</h3>
+              <h3 className="font-semibold text-gray-800">Canva</h3>
             </div>
             
             {/* Skill 10 */}
@@ -568,95 +568,71 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">Check out some of my recent works and personal projects.</p>
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+      <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+      <p className="text-gray-600 max-w-2xl mx-auto">Check out some of my recent works and personal projects.</p>
+    </div>
+    
+    <div className="flex flex-wrap justify-center gap-10">
+      {/* Project 1 */}
+      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
+        <div className="h-48 sm:h-56 overflow-hidden">
+          <img 
+            src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//Screenshot%202025-03-21%20003001.png" 
+            alt="E-Learning" 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">E-Learning</h3>
+          <p className="text-gray-600 mb-4">E-Learning Website is an interactive online learning platform designed to make education accessible, engaging, and effective for everyone</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">HTML, CSS, JavaScript</span>
+            <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold">Node.js</span>
+            <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {/* Project 1 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-              <div className="h-48 sm:h-56 overflow-hidden">
-                <img 
-                  src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//Screenshot%202025-03-20%20225231.png" 
-                  alt="Student Record System" 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Student Record System</h3>
-                <p className="text-gray-600 mb-4">The Student Record System is a web-based application that allows users to efficiently manage student information.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">HTML, CSS, JavaScript</span>
-                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">Node.js</span>
-                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <a href="https://student-record-system-ybl8.onrender.com/" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
-                  <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Project 2 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-              <div className="h-48 sm:h-56 overflow-hidden">
-                <img 
-                  src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//Screenshot%202025-03-21%20003001.png" 
-                  alt="E-Learning" 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">E-Learning</h3>
-                <p className="text-gray-600 mb-4">E-Learning Website is an interactive online learning platform designed to make education accessible, engaging, and effective for everyone</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">HTML, CSS, JavaScript</span>
-                  <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold">Node.js</span>
-                  <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
-                  <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Project 3 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-              <div className="h-48 sm:h-56 overflow-hidden">
-                <img 
-                  src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//carrer.png" 
-                  alt="Career Portal" 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Career Portal</h3>
-                <p className="text-gray-600 mb-4">Under Development Process- Coming Soon🚀</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">React js, Tailwind CSS</span>
-                  <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">Node js, Express js</span>
-                  <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <a href="#" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
-                  <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
-              View All Projects
-            </Button>
+          <div className="flex justify-between items-center">
+            <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
+            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
           </div>
         </div>
-      </section>
+      </div>
+      
+      {/* Project 2 */}
+      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
+        <div className="h-48 sm:h-56 overflow-hidden">
+          <img 
+            src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//carrer.png" 
+            alt="Career Portal" 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Career hrms</h3>
+        <p className="text-gray-600 mb-4"> Users apply for job using this and Admin can Manage Job Applications on Admin Dashboard.</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">React js, Tailwind CSS</span>
+            <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">Node js, Express js</span>
+            <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <a href="#" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
+            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="text-center mt-12">
+      <Button className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
+        View All Projects
+      </Button>
+    </div>
+  </div>
+</section>
 
       {/* Contact Us Section */}
       <section id="contact-section" className="py-16 bg-white">
