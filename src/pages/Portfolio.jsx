@@ -477,12 +477,12 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
             <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
               <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
                 <img 
-                  src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000" 
-                  alt="Express.js" 
+                  src="https://img.icons8.com/?size=100&id=117561&format=png&color=000000" 
+                  alt="Excel" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="font-semibold text-gray-800">Express.js</h3>
+              <h3 className="font-semibold text-gray-800">Excel</h3>
             </div>
             
             {/* Skill 9 */}
