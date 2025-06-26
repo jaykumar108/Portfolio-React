@@ -5,6 +5,27 @@ import Navbar from "../components/Navbar";
 import Skills from "../components/Skills";
 import emailjs from "emailjs-com";
 
+// Add custom CSS for typing animation
+const typingStyles = `
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #f97316; }
+  }
+  
+  .typing-animation {
+    overflow: hidden;
+    border-right: 3px solid #f97316;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+  }
+`;
+
 // Social media links data
 const socialLinks = [
   {
@@ -298,6 +319,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+      <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
       {/* Navbar */}
       <Navbar 
         onHomeClick={() => {}} 
@@ -315,9 +337,9 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
             {/* name Content */}
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-orange-600">Hello, I'm</h2>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2">Jay Kumar Sharma</h1>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
               <p className="text-lg mt-2">
-                <span className="text-green-500 font-semibold">Web Developer</span>
+                <span className="text-green-500 font-semibold ">Web Developer</span>
                 <span className="text-purple-600 font-semibold"> </span>
               </p>
               <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
