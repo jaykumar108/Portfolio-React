@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   FaCode, 
   FaLaptopCode, 
@@ -11,8 +11,14 @@ import {
 } from 'react-icons/fa';
 import Button from './Button';
 import Navbar from './Navbar';
+import ToggleButton from './ToggleButton';
 
 const Service = ({ onHomeClick, onAboutClick, onContactClick }) => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Services data
   const services = [
     {
@@ -258,6 +264,14 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick }) => {
           </div>
         </div>
       </section>
+
+      {/* Toggle Button */}
+      <ToggleButton 
+        onHomeClick={onHomeClick} 
+        onAboutClick={onAboutClick}
+        onServiceClick={() => {}} 
+        onContactClick={onContactClick}
+      />
     </div>
   );
 };

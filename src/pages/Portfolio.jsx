@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaTwitter, FaLinkedin, FaBehance, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk } from "react-icons/fa";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import Skills from "../components/Skills";
+import ToggleButton from "../components/ToggleButton";
 import emailjs from "emailjs-com";
 
 // Add custom CSS for typing animation
@@ -317,6 +318,11 @@ const ContactForm = () => {
 const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
       <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
@@ -548,14 +554,13 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-orange-600">Jay Kumar Sharma</h3>
-              <p className="text-gray-600 font-semibold"><div className="flex items-center space-x-3">
-
-  <img src="https://img.icons8.com/?size=100&id=JeO1Kv9jsmLr&format=png&color=000000" alt="Mail Icon" className="w-6 h-6 md:w-8 md:h-8"/>
-    <p className="text-gray-600 font-semibold text-white">jaykumarsh2003@gmail.com</p> </div> </p>
-
+              <div className="flex items-center space-x-3">
+                <img src="https://img.icons8.com/?size=100&id=JeO1Kv9jsmLr&format=png&color=000000" alt="Mail Icon" className="w-6 h-6 md:w-8 md:h-8"/>
+                <p className="text-gray-600 font-semibold text-white">jaykumarsh2003@gmail.com</p>
+              </div>
 
               <div className="flex space-x-4 text-white">
-                {footerSocialLinks.map((item) => (
+                {footerSocialLinks.map((item) => (  
                   <FooterSocialLink key={item.id} item={item} />
                 ))}
               </div>
@@ -594,6 +599,14 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
           </div>
         </div>
       </footer>
+
+      {/* Toggle Button */}
+      <ToggleButton 
+        onHomeClick={() => {}} 
+        onAboutClick={onAboutClick}
+        onServiceClick={onServiceClick}
+        onContactClick={onContactClick}
+      />
     </div>
   );
 };
