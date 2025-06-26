@@ -6,3 +6,8 @@ html, body {
   width: 100%;
   position: relative;
 }
+
+/* App.css ya index.css */
+body {
+  font-family: 'Poppins', sans-serif;
+}

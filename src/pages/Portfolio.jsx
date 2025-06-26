@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaTwitter, FaLinkedin, FaBehance, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk } from "react-icons/fa";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
+import Skills from "../components/Skills";
 import emailjs from "emailjs-com";
 
 // Social media links data
@@ -10,21 +11,21 @@ const socialLinks = [
     id: 1,
     name: "LinkedIn",
     icon: <FaLinkedin className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
   },
   {
     id: 2,
     name: "GitHub",
     icon: <FaGithub className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://github.com/jaykumar108/"
   },
   {
     id: 3,
     name: "Instagram",
     icon: <FaInstagram className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://instagram.com/jay_kumar_sharma_/"
   },
   {
@@ -42,21 +43,21 @@ const footerSocialLinks = [
     id: 1,
     name: "LinkedIn",
     icon: <FaLinkedin className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
   },
   {
     id: 2,
     name: "GitHub",
     icon: <FaGithub className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://github.com/jaykumar108/"
   },
   {
     id: 3,
     name: "Instagram",
     icon: <FaInstagram className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
-    imageUrl: "", // Optional custom image URL
+    imageUrl: "", //  custom image URL
     link: "https://www.instagram.com/jay_kumar_sharma_/"
   },
   {
@@ -338,7 +339,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
             <div className="flex-1 flex justify-center md:justify-end">
               <div className="relative mx-auto md:mx-0">
                 <img
-                  src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile.png" 
+                  src="/Profile.png" 
                   alt="Jay Sharma" 
                   className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white"
                 />
@@ -380,137 +381,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Skills</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">Equipped with a diverse set of technologies and tools to build cutting-edge web applications.</p>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
-            {/* Skill 1 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" 
-                  alt="React" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">React</h3>
-            </div>
-            
-            {/* Skill 2 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" 
-                  alt="Node.js" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">Node.js</h3>
-            </div>
-            
-            {/* Skill 3 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" 
-                  alt="JavaScript" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">JavaScript</h3>
-            </div>
-            
-            {/* Skill 4 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" 
-                  alt="HTML5" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">HTML5</h3>
-            </div>
-            
-            {/* Skill 5 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=WlXoMrd84l96&format=png&color=000000" 
-                  alt="CSS3" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">CSS</h3>
-            </div>
-            
-            {/* Skill 6 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=x7XMNGh2vdqA&format=png&color=000000" 
-                  alt="Tailwind CSS" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">Tailwind CSS</h3>
-            </div>
-            
-            {/* Skill 7 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=74402&format=png&color=000000" 
-                  alt="MongoDB" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">MongoDB</h3>
-            </div>
-            
-            {/* Skill 8 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=117561&format=png&color=000000" 
-                  alt="Excel" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">Excel</h3>
-            </div>
-            
-            {/* Skill 9 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=iWw83PVcBpLw&format=png&color=000000" 
-                  alt="Canva" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">Canva</h3>
-            </div>
-            
-            {/* Skill 10 */}
-            <div className="p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all text-center">
-              <div className="w-20 h-20 mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://img.icons8.com/?size=100&id=46972&format=png&color=000000" 
-                  alt="WordPress" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-gray-800">WordPress</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Skills />
 
       {/* Services Section */}
       <section className="py-16">
@@ -611,7 +482,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
           />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Career hrms</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Career Portal</h3>
         <p className="text-gray-600 mb-4"> Users apply for job using this and Admin can Manage Job Applications on Admin Dashboard.</p>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">React js, Tailwind CSS</span>
@@ -619,7 +490,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
             <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="#" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
+            <a href="https://career-portal-project.vercel.app/" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
             <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
           </div>
         </div>
@@ -691,7 +562,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
               <ul className="space-y-2 text-gray-600 text-white">
                 <li>Darbhanga, Bihar india</li>
                
-                <li>+91 0000000000    </li>
+                <li>+91     </li>
               </ul>
             </div>
           </div>

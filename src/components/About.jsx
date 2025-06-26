@@ -118,9 +118,9 @@ const About = ({ onHomeClick, onServiceClick, onContactClick }) => {
 
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
-                  Download CV
-                </Button>
+                  {/* <Button className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                    Download CV
+                  </Button> */}
                 <Button 
                   className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors"
                   onClick={onContactClick}
@@ -135,7 +135,7 @@ const About = ({ onHomeClick, onServiceClick, onContactClick }) => {
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <div className="absolute inset-0 bg-orange-500 rounded-lg transform rotate-6"></div>
                 <img
-                  src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile.png" 
+                  src="/Profile.png" 
                   alt="Jay Kumar Sharma" 
                   className="relative z-10 rounded-lg shadow-xl w-full h-full object-cover"
                 />
