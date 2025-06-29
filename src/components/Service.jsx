@@ -13,7 +13,7 @@ import Button from './Button';
 import Navbar from './Navbar';
 import ToggleButton from './ToggleButton';
 
-const Service = ({ onHomeClick, onAboutClick, onContactClick }) => {
+const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -137,6 +137,7 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick }) => {
         onAboutClick={onAboutClick}
         onServiceClick={() => {}}
         onContactClick={onContactClick}
+        onProjectClick={onProjectClick}
         currentPage="service" 
       />
       

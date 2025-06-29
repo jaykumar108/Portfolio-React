@@ -315,7 +315,7 @@ const ContactForm = () => {
   );
 };
 
-const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
+const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClick}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Scroll to top when component mounts
@@ -332,6 +332,8 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
         onAboutClick={onAboutClick}
         onServiceClick={onServiceClick}
         onContactClick={onContactClick}
+        onProjectClick={onProjectClick}
+        
         currentPage="home" 
       />
 
@@ -467,7 +469,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
       </section>
 
       {/* Projects Section */}
-<section className="py-16 bg-gray-50">
+<section id="project-section"className="py-16 bg-gray-50">
   <div className="container mx-auto px-6">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
@@ -581,6 +583,8 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
                 <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onAboutClick}>About Me</li>
                 <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onServiceClick}>Services</li>
                 <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onContactClick}>Contact</li>
+                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onProjectClick}>Projects</li>
+
               </ul>
             </div>
 
@@ -606,6 +610,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick }) => {
         onAboutClick={onAboutClick}
         onServiceClick={onServiceClick}
         onContactClick={onContactClick}
+        onProjectClick={onProjectClick}
       />
     </div>
   );

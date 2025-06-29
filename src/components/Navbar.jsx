@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "./Button";
 
-const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, currentPage }) => {
+const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -52,6 +52,16 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, cur
                 onClick={onServiceClick}
               >
                 Services
+              </li>
+               <li 
+                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+                  currentPage === 'project' 
+                    ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
+                    : 'text-gray-700 hover:text-orange-600'
+                }`}
+                onClick={onProjectClick}
+              >
+                Projects
               </li>
               <li 
                 className="cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md text-gray-700 hover:text-orange-600"
@@ -132,6 +142,19 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, cur
             >
               Services
             </li>
+            <li 
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+                currentPage === 'project' 
+                  ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
+                  : 'text-gray-700 hover:text-orange-600'
+              }`}
+              onClick={() => {
+                setIsMenuOpen(false);
+                onProjectClick();
+              }}
+            >
+              Projects
+              </li>
             <li 
               className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md text-gray-700 hover:text-orange-600"
               onClick={() => {

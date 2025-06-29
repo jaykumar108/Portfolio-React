@@ -39,6 +39,17 @@ function App() {
     }, 100)
   }
 
+  const handleNavigateToProject = () => {
+    setCurrentPage('home')
+    // We need to wait for the component to render before scrolling
+    setTimeout(() => {
+      const projectSection = document.getElementById('project-section')
+      if (projectSection) {
+        projectSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
+
   return (
     <>
       {currentPage === 'about' ? (
@@ -46,18 +57,21 @@ function App() {
           onHomeClick={handleNavigateToHome}
           onServiceClick={handleNavigateToService}
           onContactClick={handleNavigateToContact}
+          onProjectClick={handleNavigateToProject}
         />
       ) : currentPage === 'service' ? (
         <Service 
           onHomeClick={handleNavigateToHome}
           onAboutClick={handleNavigateToAbout}
           onContactClick={handleNavigateToContact}
+          onProjectClick={handleNavigateToProject}
         />
       ) : (
         <Portfolio 
           onAboutClick={handleNavigateToAbout}
           onServiceClick={handleNavigateToService}
           onContactClick={handleNavigateToContact}
+          onProjectClick={handleNavigateToProject}
         />
       )}
     </>

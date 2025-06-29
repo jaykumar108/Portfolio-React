@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaHome, FaUser, FaCogs, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaCogs, FaEnvelope, FaFolder } from 'react-icons/fa';
 
-const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick }) => {
+const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -35,6 +35,12 @@ const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
     },
     {
       id: 4,
+      name: 'Projects',
+      icon: <FaFolder className="text-lg" />,
+      onClick: onProjectClick
+    },
+    {
+      id: 5,
       name: 'Contact',
       icon: <FaEnvelope className="text-lg" />,
       onClick: onContactClick
