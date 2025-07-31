@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaCode, FaLaptopCode, FaUserGraduate, FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Button from './Button';
@@ -96,6 +97,119 @@ const About = ({ onHomeClick, onServiceClick, onContactClick, onProjectClick }) 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>About Jay Sharma - Full Stack Developer | Education & Experience</title>
+        <meta name="title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <meta name="description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies. View education, experience, and certifications." />
+        <meta name="keywords" content="about jay sharma, jay sharma education, jay sharma experience, jay sharma certifications, jay sharma background, jay sharma developer, jay sharma portfolio about, jay sharma skills, jay sharma qualifications, jay sharma resume, jay sharma developer profile, jay sharma web developer about, jay sharma MERN stack developer, jay sharma space about, Jay Kumar sharma about" />
+        <meta name="author" content="Jay Sharma" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="target" content="all" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jaysharma.space/about" />
+        <meta property="og:title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <meta property="og:description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies. View education, experience, and certifications." />
+        <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="About Jay Sharma - Full Stack Developer" />
+        <meta property="og:site_name" content="Jay Sharma Portfolio" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://jaysharma.space/about" />
+        <meta property="twitter:title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <meta property="twitter:description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies." />
+        <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
+        <meta property="twitter:image:alt" content="About Jay Sharma - Full Stack Developer" />
+        <meta property="twitter:creator" content="@jaysharma" />
+        <meta property="twitter:site" content="@jaysharma" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://jaysharma.space/about" />
+        
+        {/* Structured Data / JSON-LD */}
+        <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Jay Sharma",
+          "jobTitle": "Full Stack Developer",
+          "description": "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies",
+          "url": "https://jaysharma.space/about",
+          "image": "https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png",
+          "alternateName": ["Portfolio Jay Sharma", "Jay Sharma Space", "Jay Kumar Sharma"],
+          "givenName": "Jay",
+          "familyName": "Sharma",
+          "additionalName": "Kumar",
+          "nationality": "Indian",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "India"
+          },
+          
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Full Stack Developer",
+            "occupationLocation": {
+              "@type": "Place",
+              "name": "India"
+            }
+          },
+          
+          "knowsAbout": [
+            "React.js",
+            "Node.js", 
+            "JavaScript",
+            "TypeScript",
+            "MongoDB",
+            "Express.js",
+            "Full Stack Development",
+            "Web Development",
+            "WordPress",
+            "CMS Development",
+            "HTML",
+            "CSS",
+            "Responsive Design"
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Web Development Training",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "Internshala"
+              }
+            },
+            {
+              "@type": "EducationalOccupationalCredential", 
+              "credentialCategory": "Soft Skills Training",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "TCS iON"
+              }
+            }
+          ],
+          "sameAs": [
+            "https://github.com/jaykumar108/",
+            "https://linkedin.com/in/jaykumar108/",
+            "https://twitter.com/jaysharma"
+          ]
+        }
+        `}
+        </script>
+      </Helmet>
+      
       {/* Navbar */}
       <Navbar 
         onHomeClick={onHomeClick} 

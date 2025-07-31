@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { 
   FaCode, 
   FaLaptopCode, 
@@ -131,6 +132,152 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Web Development Services - Jay Sharma | Full Stack Developer</title>
+        <meta name="title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
+        <meta name="description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
+        <meta name="keywords" content="web development services, jay sharma services, jay sharma web developer services, jay sharma MERN stack services, jay sharma space services, Jay Kumar sharma services, react development services, node.js development, responsive web design, graphic design services, backend development, frontend development, custom website development, web application development, portfolio development, WordPress development, CMS development, API development, database design, cloud integration, responsive UI design, social media post design, logo design, template design, card design" />
+        <meta name="author" content="Jay Sharma" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="target" content="all" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jaysharma.space/services" />
+        <meta property="og:title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
+        <meta property="og:description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
+        <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Web Development Services - Jay Sharma" />
+        <meta property="og:site_name" content="Jay Sharma Portfolio" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://jaysharma.space/services" />
+        <meta property="twitter:title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
+        <meta property="twitter:description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, and backend development." />
+        <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
+        <meta property="twitter:image:alt" content="Web Development Services - Jay Sharma" />
+        <meta property="twitter:creator" content="@jaysharma" />
+        <meta property="twitter:site" content="@jaysharma" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://jaysharma.space/services" />
+        
+        {/* Structured Data / JSON-LD */}
+        <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Web Development Services",
+          "description": "Professional web development services including frontend development, backend development, graphic design, and responsive web design",
+          "provider": {
+            "@type": "Person",
+            "name": "Jay Sharma",
+            "jobTitle": "Full Stack Developer",
+            "url": "https://jaysharma.space/"
+          },
+          "url": "https://jaysharma.space/services",
+          "image": "https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png",
+          "serviceType": [
+            "Web Development",
+            "Frontend Development", 
+            "Backend Development",
+            "Graphic Design",
+            "Responsive Web Design",
+            "API Development",
+            "Database Design",
+            "Cloud Integration"
+          ],
+          "areaServed": {
+            "@type": "Country",
+            "name": "Worldwide"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Development",
+                  "description": "Responsive websites built with modern technologies like React, HTML, CSS, and JavaScript"
+                }
+              },
+              {
+                "@type": "Offer", 
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Graphic Design",
+                  "description": "Professional graphic design services including logo design, social media posts, and template design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service", 
+                  "name": "Backend Development",
+                  "description": "Server-side development using Node.js, Express, and cloud integration services"
+                }
+              }
+            ]
+          },
+          "potentialAction": {
+            "@type": "ContactPage",
+            "name": "Contact for Services",
+            "url": "https://jaysharma.space/#contact"
+          }
+        }
+        `}
+        </script>
+        
+        {/* Additional Structured Data for LocalBusiness */}
+        <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Jay Sharma Web Development Services",
+          "description": "Professional web development and design services",
+          "url": "https://jaysharma.space/services",
+          "telephone": "",
+          "email": "",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "India"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "",
+            "longitude": ""
+          },
+          "openingHours": "Mo-Su 09:00-18:00",
+          "priceRange": "$$",
+          "currenciesAccepted": "INR, USD",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Worldwide"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services"
+          }
+        }
+        `}
+        </script>
+      </Helmet>
+      
       {/* Navbar */}
       <Navbar 
         onHomeClick={onHomeClick} 
