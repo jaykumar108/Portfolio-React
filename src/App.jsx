@@ -1,55 +1,25 @@
-import { useState, useRef, useEffect } from 'react'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import './App.css'
 import Portfolio from './pages/Portfolio'
 import About from './components/About'
 import Service from './components/Service'
+import NotFound from './components/NotFound'
 import emailjs from 'emailjs-com'
 
-
-
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-  const contactSectionRef = useRef(null)
+  const location = useLocation()
 
   // Initialize EmailJS
   useEffect(() => {
     emailjs.init("lrivzXbMVzdaxpZ91"); // Public key provided by the user
   }, []);
 
-  const handleNavigateToHome = () => {
-    setCurrentPage('home')
-  }
-
-  const handleNavigateToAbout = () => {
-    setCurrentPage('about')
-  }
-
-  const handleNavigateToService = () => {
-    setCurrentPage('service')
-  }
-
-  const handleNavigateToContact = () => {
-    setCurrentPage('home')
-    // We need to wait for the component to render before scrolling
-    setTimeout(() => {
-      const contactSection = document.getElementById('contact-section')
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 100)
-  }
-
-  const handleNavigateToProject = () => {
-    setCurrentPage('home')
-    // We need to wait for the component to render before scrolling
-    setTimeout(() => {
-      const projectSection = document.getElementById('project-section')
-      if (projectSection) {
-        projectSection.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 100)
-  }
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>
@@ -133,28 +103,12 @@ function App() {
         </script>
       </Helmet>
       
-      {currentPage === 'about' ? (
-        <About 
-          onHomeClick={handleNavigateToHome}
-          onServiceClick={handleNavigateToService}
-          onContactClick={handleNavigateToContact}
-          onProjectClick={handleNavigateToProject}
-        />
-      ) : currentPage === 'service' ? (
-        <Service 
-          onHomeClick={handleNavigateToHome}
-          onAboutClick={handleNavigateToAbout}
-          onContactClick={handleNavigateToContact}
-          onProjectClick={handleNavigateToProject}
-        />
-      ) : (
-        <Portfolio 
-          onAboutClick={handleNavigateToAbout}
-          onServiceClick={handleNavigateToService}
-          onContactClick={handleNavigateToContact}
-          onProjectClick={handleNavigateToProject}
-        />
-      )}
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   )
 }

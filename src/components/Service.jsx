@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import { 
   FaCode, 
   FaLaptopCode, 
@@ -14,11 +15,43 @@ import Button from './Button';
 import Navbar from './Navbar';
 import ToggleButton from './ToggleButton';
 
-const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) => {
+const Service = () => {
+  const navigate = useNavigate();
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleNavigateToHome = () => {
+    navigate('/');
+  };
+
+  const handleNavigateToAbout = () => {
+    navigate('/about');
+  };
+
+  const handleNavigateToContact = () => {
+    navigate('/');
+    // We need to wait for the component to render before scrolling
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact-section');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  const handleNavigateToProject = () => {
+    navigate('/');
+    // We need to wait for the component to render before scrolling
+    setTimeout(() => {
+      const projectSection = document.getElementById('project-section');
+      if (projectSection) {
+        projectSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   // Services data
   const services = [
@@ -280,11 +313,11 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) 
       
       {/* Navbar */}
       <Navbar 
-        onHomeClick={onHomeClick} 
-        onAboutClick={onAboutClick}
+        onHomeClick={handleNavigateToHome} 
+        onAboutClick={handleNavigateToAbout}
         onServiceClick={() => {}}
-        onContactClick={onContactClick}
-        onProjectClick={onProjectClick}
+        onContactClick={handleNavigateToContact}
+        onProjectClick={handleNavigateToProject}
         currentPage="service" 
       />
       
@@ -402,7 +435,7 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) 
               Let's work together to create something amazing. Contact me today to discuss your project requirements.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors" onClick={onContactClick}>
+              <Button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors" onClick={handleNavigateToContact}>
                 Contact Me
               </Button>
               {/* <Button className="border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
@@ -415,10 +448,10 @@ const Service = ({ onHomeClick, onAboutClick, onContactClick, onProjectClick }) 
 
       {/* Toggle Button */}
       <ToggleButton 
-        onHomeClick={onHomeClick} 
-        onAboutClick={onAboutClick}
+        onHomeClick={handleNavigateToHome} 
+        onAboutClick={handleNavigateToAbout}
         onServiceClick={() => {}} 
-        onContactClick={onContactClick}
+        onContactClick={handleNavigateToContact}
       />
     </div>
   );

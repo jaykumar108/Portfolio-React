@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaTwitter, FaLinkedin, FaBehance, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk } from "react-icons/fa";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
@@ -315,25 +316,49 @@ const ContactForm = () => {
   );
 };
 
-const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClick}) => {
+const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleNavigateToAbout = () => {
+    navigate('/about');
+  };
+
+  const handleNavigateToServices = () => {
+    navigate('/services');
+  };
+
+  const handleNavigateToContact = () => {
+    // Scroll to contact section on the same page
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleNavigateToProject = () => {
+    // Scroll to project section on the same page
+    const projectSection = document.getElementById('project-section');
+    if (projectSection) {
+      projectSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
       <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
       {/* Navbar */}
       <Navbar 
-        onHomeClick={() => {}} 
-        onAboutClick={onAboutClick}
-        onServiceClick={onServiceClick}
-        onContactClick={onContactClick}
-        onProjectClick={onProjectClick}
-        
+        onHomeClick={() => navigate('/')} 
+        onAboutClick={handleNavigateToAbout}
+        onServiceClick={handleNavigateToServices}
+        onContactClick={handleNavigateToContact}
+        onProjectClick={handleNavigateToProject}
         currentPage="home" 
       />
 
@@ -353,7 +378,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClic
               <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
               I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
               </p>
-              <Button className="bg-orange-500 text-white px-6 py-3 rounded-lg mt-6 hover:bg-orange-600 transition-colors" onClick={onAboutClick}>
+              <Button className="bg-orange-500 text-white px-6 py-3 rounded-lg mt-6 hover:bg-orange-600 transition-colors" onClick={handleNavigateToAbout}>
                 About Me
               </Button>
 
@@ -460,7 +485,7 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClic
           <div className="text-center mt-12">
             <Button 
               className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
-              onClick={onServiceClick}
+              onClick={handleNavigateToServices}
             >
               View All Services
             </Button>
@@ -580,10 +605,10 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClic
             <div>
               <h4 className="font-semibold text-lg mb-4">Important Links</h4>
               <ul className="space-y-2 text-gray-600">
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onAboutClick}>About Me</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onServiceClick}>Services</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onContactClick}>Contact</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={onProjectClick}>Projects</li>
+                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToAbout}>About Me</li>
+                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToServices}>Services</li>
+                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToContact}>Contact</li>
+                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToProject}>Projects</li>
 
               </ul>
             </div>
@@ -606,11 +631,11 @@ const Portfolio = ({ onAboutClick, onServiceClick, onContactClick, onProjectClic
 
       {/* Toggle Button */}
       <ToggleButton 
-        onHomeClick={() => {}} 
-        onAboutClick={onAboutClick}
-        onServiceClick={onServiceClick}
-        onContactClick={onContactClick}
-        onProjectClick={onProjectClick}
+        onHomeClick={() => navigate('/')} 
+        onAboutClick={handleNavigateToAbout}
+        onServiceClick={handleNavigateToServices}
+        onContactClick={handleNavigateToContact}
+        onProjectClick={handleNavigateToProject}
       />
     </div>
   );

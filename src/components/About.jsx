@@ -1,16 +1,49 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import { FaCode, FaLaptopCode, FaUserGraduate, FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import Navbar from './Navbar';
 import ToggleButton from './ToggleButton';
 
-const About = ({ onHomeClick, onServiceClick, onContactClick, onProjectClick }) => {
+const About = () => {
+  const navigate = useNavigate();
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleNavigateToHome = () => {
+    navigate('/');
+  };
+
+  const handleNavigateToServices = () => {
+    navigate('/services');
+  };
+
+  const handleNavigateToContact = () => {
+    navigate('/');
+    // We need to wait for the component to render before scrolling
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact-section');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  const handleNavigateToProject = () => {
+    navigate('/');
+    // We need to wait for the component to render before scrolling
+    setTimeout(() => {
+      const projectSection = document.getElementById('project-section');
+      if (projectSection) {
+        projectSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   // Education data
   const education = [
@@ -212,11 +245,11 @@ const About = ({ onHomeClick, onServiceClick, onContactClick, onProjectClick }) 
       
       {/* Navbar */}
       <Navbar 
-        onHomeClick={onHomeClick} 
+        onHomeClick={handleNavigateToHome} 
         onAboutClick={() => {}} 
-        onServiceClick={onServiceClick}
-        onContactClick={onContactClick}
-        onProjectClick={onProjectClick}
+        onServiceClick={handleNavigateToServices}
+        onContactClick={handleNavigateToContact}
+        onProjectClick={handleNavigateToProject}
         currentPage="about" 
       />
       
@@ -269,7 +302,7 @@ const About = ({ onHomeClick, onServiceClick, onContactClick, onProjectClick }) 
               >
                 <Button 
                   className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors"
-                  onClick={onContactClick}
+                  onClick={handleNavigateToContact}
                 >
                   Contact Me
                 </Button>
@@ -585,10 +618,10 @@ const About = ({ onHomeClick, onServiceClick, onContactClick, onProjectClick }) 
 
       {/* Toggle Button */}
       <ToggleButton 
-        onHomeClick={onHomeClick} 
+        onHomeClick={handleNavigateToHome} 
         onAboutClick={() => {}} 
-        onServiceClick={onServiceClick}
-        onContactClick={onContactClick}
+        onServiceClick={handleNavigateToServices}
+        onContactClick={handleNavigateToContact}
       />
     </div>
   );
