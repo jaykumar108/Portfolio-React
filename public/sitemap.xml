@@ -6,12 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jaysharma.space/</loc>
+    <loc>https://jaysharma.space/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaysharma.space/</loc>
+    <loc>https://jaysharma.space/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
