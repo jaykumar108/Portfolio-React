@@ -9,9 +9,17 @@ const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
     setIsOpen(!isOpen);
   };
 
-  const handleNavClick = (callback) => {
+  const handleNavClick = (callback, isHome = false) => {
     setIsOpen(false);
-    if (callback) callback();
+    if (callback) {
+      callback();
+      // If it's home button, scroll to top after navigation
+      if (isHome) {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      }
+    }
   };
 
   const menuItems = [
@@ -66,10 +74,10 @@ const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  onClick={() => handleNavClick(item.onClick)}
-                  className="w-full flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-md transition-all duration-200 group"
+                  onClick={() => handleNavClick(item.onClick, item.name === 'Home')}
+                  className="w-full flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all duration-200 group"
                 >
-                  <div className="text-orange-500 group-hover:scale-110 transition-transform duration-200">
+                  <div className="text-blue-500 group-hover:scale-110 transition-transform duration-200">
                     {item.icon}
                   </div>
                   <span className="font-medium">{item.name}</span>
@@ -83,7 +91,7 @@ const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
       {/* Toggle Button */}
       <motion.button
         onClick={toggleMenu}
-        className="bg-orange-500 hover:bg-orange-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-60"
+        className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-60"
         whileTap={{ scale: 0.95 }}
         animate={{ rotate: isOpen ? 180 : 0 }}
         transition={{ duration: 0.3 }}

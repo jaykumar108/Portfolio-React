@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { FaTwitter, FaLinkedin, FaBehance, FaEye, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk, FaDownload } from "react-icons/fa";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
@@ -351,6 +352,96 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Jay Kumar Sharma - Web Developer | Portfolio</title>
+        <meta name="title" content="Jay Kumar Sharma - Web Developer | Portfolio" />
+        <meta name="description" content="Jay Kumar Sharma is a passionate Web Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and services." />
+        <meta name="keywords" content="Jay Kumar Sharma, Jai Sharma, Web Developer, React Developer, Node.js Developer, Frontend Developer, Full Stack Developer, Portfolio, Web Development, JavaScript, React, Node.js, MongoDB, Express.js, Tailwind CSS" />
+        <meta name="author" content="Jay Kumar Sharma" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jaysharma.space/" />
+        <meta property="og:title" content="Jay Kumar Sharma - Web Developer | Portfolio" />
+        <meta property="og:description" content="Jay Kumar Sharma is a passionate Web Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and services." />
+        <meta property="og:image" content="/Profile.png" />
+        <meta property="og:site_name" content="Jay Kumar Sharma Portfolio" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://jaysharma.space/" />
+        <meta property="twitter:title" content="Jay Kumar Sharma - Web Developer | Portfolio" />
+        <meta property="twitter:description" content="Jay Kumar Sharma is a passionate Web Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and services." />
+        <meta property="twitter:image" content="/Profile.png" />
+        <meta name="twitter:creator" content="@jay_kumar_sharma_" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#3b82f6" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Jay Kumar Sharma" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://jaysharma.space/" />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        
+        {/* Structured Data / JSON-LD */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Jay Kumar Sharma",
+              "alternateName": ["Jai Sharma", "Jay Sharma"],
+              "jobTitle": "Web Developer",
+              "description": "Passionate Web Developer specializing in React, Node.js, and modern web technologies",
+              "url": "https://jaysharma.space/",
+              "image": "/Profile.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/jaykumar108/",
+                "https://github.com/jaykumar108/",
+                "https://instagram.com/jay_kumar_sharma_/"
+
+              ],
+              "knowsAbout": [
+                "Web Development",
+                "React.js",
+                "Node.js",
+                "JavaScript",
+                "MongoDB",
+                "Express.js",
+                "Tailwind CSS",
+                "WordPress Development",
+                "Graphic Design"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Darbhanga",
+                "addressRegion": "Bihar",
+                "addressCountry": "India"
+              },
+              "email": "jaykumarsh2003@gmail.com",
+              "telephone": "+91",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance Web Developer"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+      
       <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
       {/* Navbar */}
       <Navbar 
@@ -367,8 +458,8 @@ const Portfolio = () => {
         {/* middle Section */}
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Profile Image - Top on mobile, right on desktop */}
-            <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
+            {/* Profile Image - Always first on mobile, right on desktop */}
+            <div className="w-full md:w-auto flex justify-center md:justify-end md:order-2">
               <div className="relative mx-auto md:mx-0">
                 <img
                   src="/Profile.png" 
@@ -393,8 +484,8 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* name Content - Below image on mobile, left on desktop */}
-            <div className="flex-1 text-center md:text-left order-2 md:order-1">
+            {/* name Content - Always second on mobile, left on desktop */}
+            <div className="w-full md:w-auto text-center md:text-left md:order-1">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Hello, I'm</h2>
               <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
               <p className="text-lg mt-2">
