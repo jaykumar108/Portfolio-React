@@ -59,7 +59,7 @@ const Service = () => {
       id: 1,
       title: "Web Development",
       description: "Websites built with the latest technologies to deliver exceptional user experiences.",
-      icon: <FaCode className="text-3xl text-orange-500" />,
+      icon: <FaCode className="text-3xl text-blue-500" />,
       features: [
         "Responsive design for all devices",
         "Modern JavaScript frameworks (React)",
@@ -71,7 +71,7 @@ const Service = () => {
       id: 2,
       title: "Graphic Design",
       description: "design that enhances the user experience and increases engagement.",
-      icon: <FaMobileAlt className="text-3xl text-orange-500" />,
+      icon: <FaMobileAlt className="text-3xl text-blue-500" />,
       features: [
         "Card Design",
         "Social Media Post Design",
@@ -83,7 +83,7 @@ const Service = () => {
     //   id: 3,
     //   title: "UI/UX Design",
     //   description: "User-centered design that enhances the user experience and increases engagement.",
-    //   icon: <FaPalette className="text-3xl text-orange-500" />,
+    //   icon: <FaPalette className="text-3xl text-blue-500" />,
     //   features: [
     //     "Wireframing & prototyping",
     //     "User research & testing",
@@ -95,7 +95,7 @@ const Service = () => {
       id: 4,
       title: "Backend Development",
       description: "Powerful and secure server-side solutions for your web applications. ",
-      icon: <FaServer className="text-3xl text-orange-500" />,
+      icon: <FaServer className="text-3xl text-blue-500" />,
       features: [
         "API development",
         "Node.js & Express",
@@ -107,7 +107,7 @@ const Service = () => {
     //   id: 5,
     //   title: "Database Management",
     //   description: "Efficient data storage solutions with secure and scalable database architectures.",
-    //   icon: <FaDatabase className="text-3xl text-orange-500" />,
+    //   icon: <FaDatabase className="text-3xl text-blue-500" />,
     //   features: [
     //     "SQL & NoSQL database design",
     //     "Data modeling & optimization",
@@ -119,7 +119,7 @@ const Service = () => {
     //   id: 6,
     //   title: "Web Security",
     //   description: "Implementing robust security measures to protect your website and user data.",
-    //   icon: <FaShieldAlt className="text-3xl text-orange-500" />,
+    //   icon: <FaShieldAlt className="text-3xl text-blue-500" />,
     //   features: [
     //     "Security audits & vulnerability testing",
     //     "SSL implementation",
@@ -167,9 +167,9 @@ const Service = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Web Development Services - Jay Sharma | Full Stack Developer</title>
-        <meta name="title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
-        <meta name="description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
+        <title>Jay Kumar Sharma - Web Developer | Full Stack Developer</title>
+        <meta name="title" content="Web Development Services - Jay Kumar Sharma | Full Stack Developer" />
+        <meta name="description" content="Professional web development services by Jay Kumar Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
         <meta name="keywords" content="web development services, jay sharma services, jay sharma web developer services, jay sharma MERN stack services, jay sharma space services, Jay Kumar sharma services, react development services, node.js development, responsive web design, graphic design services, backend development, frontend development, custom website development, web application development, portfolio development, WordPress development, CMS development, API development, database design, cloud integration, responsive UI design, social media post design, logo design, template design, card design" />
         <meta name="author" content="Jay Sharma" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -326,7 +326,7 @@ const Service = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Services</h1>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               I offer a wide range of web development services to help businesses establish a strong online presence.
               From designing beautiful user interfaces to developing robust backend systems, I can help turn your ideas into reality.
@@ -341,7 +341,7 @@ const Service = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(service => (
               <div key={service.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="bg-orange-50 p-6 flex items-center justify-center">
+                <div className="bg-gradient-to-r from-blue-50 to-teal-50 p-6 flex items-center justify-center">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
                     {service.icon}
                   </div>
@@ -352,14 +352,14 @@ const Service = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <span className="text-orange-500 mt-1">•</span>
+                        <span className="text-blue-500 mt-1">•</span>
                         <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="px-6 pb-6">
-                  <Button className="w-full bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                  <Button className="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg">
                     Learn More
                   </Button>
                 </div>
@@ -374,7 +374,7 @@ const Service = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Process</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 max-w-3xl mx-auto">
               I follow a systematic approach to ensure every project is completed efficiently and meets the highest standards of quality.
             </p>
@@ -384,7 +384,7 @@ const Service = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {processSteps.map(step => (
                 <div key={step.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
-                  <div className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                     {step.id}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
@@ -401,12 +401,12 @@ const Service = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Me</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <FaLaptopCode className="text-4xl text-orange-500 mb-4" />
+              <FaLaptopCode className="text-4xl text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Expertise</h3>
               <p className="text-gray-600">
                 With years of experience in web development, I have developed a strong foundation in both frontend and backend technologies. 
@@ -415,7 +415,7 @@ const Service = () => {
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <FaSearch className="text-4xl text-orange-500 mb-4" />
+              <FaSearch className="text-4xl text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-3">Attention to Detail</h3>
               <p className="text-gray-600">
                 I believe that small details make a big difference. From pixel-perfect designs to optimized code, 
@@ -427,7 +427,7 @@ const Service = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-orange-50">
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h2>
@@ -435,7 +435,7 @@ const Service = () => {
               Let's work together to create something amazing. Contact me today to discuss your project requirements.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors" onClick={handleNavigateToContact}>
+              <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToContact}>
                 Contact Me
               </Button>
               {/* <Button className="border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">

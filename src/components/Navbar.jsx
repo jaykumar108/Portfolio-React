@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaCode } from "react-icons/fa";
 import Button from "./Button";
 
 const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, currentPage }) => {
@@ -8,71 +8,79 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
   return (
     <>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50 px-6 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 bg-white z-50 px-6 border-b border-gray-200">
         <div className="max-w-6xl mx-auto py-4">
           <div className="flex items-center justify-between">
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-gray-600 hover:text-orange-500 transition-colors duration-300"
+              className="md:hidden text-gray-600 hover:text-blue-500 transition-colors duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
 
-            <h1 className="text-2xl md:text-2xl font-bold text-orange-600"> 𝓳𝓪𝔂 𝓼𝓱𝓪𝓻𝓶𝓪</h1>
+            {/* Logo and Name */}
+            <div className="flex items-center space-x-2">
+              <FaCode className="text-blue-500 text-2xl" />
+              <h1 className="text-2xl font-bold text-gray-800">Jay Sharma</h1>
+            </div>
 
-            {/* Desktop Menu - Centered */}
-            <ul className="hidden md:flex space-x-6 text-lg absolute left-1/2 transform -translate-x-1/2">
+            {/* Desktop Menu - Right Aligned */}
+            <ul className="hidden md:flex space-x-8 text-lg">
               <li 
-                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
-                  currentPage === 'home' 
-                    ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                    : 'text-gray-700 hover:text-orange-600'
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
+                  currentPage === 'home'  
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
                 }`}
                 onClick={onHomeClick}
               >
                 Home
               </li>
               <li 
-                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
                   currentPage === 'about' 
-                    ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                    : 'text-gray-700 hover:text-orange-600'
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
                 }`}
                 onClick={onAboutClick}
               >
                 About
               </li>
               <li 
-                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
                   currentPage === 'service' 
-                    ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                    : 'text-gray-700 hover:text-orange-600'
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
                 }`}
                 onClick={onServiceClick}
               >
                 Services
               </li>
                <li 
-                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
                   currentPage === 'project' 
-                    ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                    : 'text-gray-700 hover:text-orange-600'
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
                 }`}
                 onClick={onProjectClick}
               >
                 Projects
               </li>
               <li 
-                className="cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md text-gray-700 hover:text-orange-600"
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
+                  currentPage === 'contact' 
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
+                }`}
                 onClick={onContactClick}
               >
                 Contact
               </li>
             </ul>
 
-            {/* Empty div to maintain spacing */}
-            <div className="hidden md:block w-24"></div>
+            {/* Empty div to maintain spacing on mobile */}
+            <div className="md:hidden w-8"></div>
           </div>
         </div>
       </nav>
@@ -93,9 +101,12 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-orange-600">Menu</h2>
+            <div className="flex items-center space-x-2">
+              <FaCode className="text-blue-500 text-xl" />
+              <h2 className="text-xl font-bold text-gray-800">Jay Sharma</h2>
+            </div>
             <button 
-              className="text-gray-600 hover:text-orange-500 transition-colors duration-300"
+              className="text-gray-600 hover:text-blue-500 transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               <FaTimes size={24} />
@@ -104,10 +115,10 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
           
           <ul className="space-y-4">
             <li 
-              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
                 currentPage === 'home' 
-                  ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                  : 'text-gray-700 hover:text-orange-600'
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
               }`}
               onClick={() => {
                 setIsMenuOpen(false);
@@ -117,10 +128,10 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
               Home
             </li>
             <li 
-              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
                 currentPage === 'about' 
-                  ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                  : 'text-gray-700 hover:text-orange-600'
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
               }`}
               onClick={() => {
                 setIsMenuOpen(false);
@@ -130,10 +141,10 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
               About
             </li>
             <li 
-              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
                 currentPage === 'service' 
-                  ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                  : 'text-gray-700 hover:text-orange-600'
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
               }`}
               onClick={() => {
                 setIsMenuOpen(false);
@@ -143,10 +154,10 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
               Services
             </li>
             <li 
-              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md ${
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
                 currentPage === 'project' 
-                  ? 'text-orange-500 font-semibold bg-orange-50 shadow-sm' 
-                  : 'text-gray-700 hover:text-orange-600'
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
               }`}
               onClick={() => {
                 setIsMenuOpen(false);
@@ -156,7 +167,11 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
               Projects
               </li>
             <li 
-              className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-orange-100 hover:scale-105 hover:shadow-md text-gray-700 hover:text-orange-600"
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
+                currentPage === 'contact' 
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
+              }`}
               onClick={() => {
                 setIsMenuOpen(false);
                 onContactClick();

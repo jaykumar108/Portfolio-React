@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import './App.css'
@@ -6,20 +6,45 @@ import Portfolio from './pages/Portfolio'
 import About from './components/About'
 import Service from './components/Service'
 import NotFound from './components/NotFound'
+import Loading from './components/ui/loading'
 import emailjs from 'emailjs-com'
 
 function App() {
   const location = useLocation()
+  const [isLoading, setIsLoading] = useState(true)
 
   // Initialize EmailJS
   useEffect(() => {
     emailjs.init("lrivzXbMVzdaxpZ91"); // Public key provided by the user
   }, []);
 
+  // Simulate loading time and initialize app
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Show loading for 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    if (!isLoading) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, isLoading]);
+
+  // Show loading screen while app is initializing
+  if (isLoading) {
+    return (
+      <>
+        <Helmet>
+          <title>Loading... - Jay Sharma Portfolio</title>
+        </Helmet>
+        <Loading text="Welcome to Jay Sharma's Portfolio" />
+      </>
+    );
+  }
 
   return (
     <>

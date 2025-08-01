@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaTwitter, FaLinkedin, FaBehance, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaBehance, FaEye, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk, FaDownload } from "react-icons/fa";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import Skills from "../components/Skills";
@@ -16,12 +16,12 @@ const typingStyles = `
   
   @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: #f97316; }
+    50% { border-color: #3b82f6; }
   }
   
   .typing-animation {
     overflow: hidden;
-    border-right: 3px solid #f97316;
+    border-right: 3px solid #3b82f6;
     white-space: nowrap;
     animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
     animation-fill-mode: forwards;
@@ -33,28 +33,28 @@ const socialLinks = [
   {
     id: 1,
     name: "LinkedIn",
-    icon: <FaLinkedin className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
+    icon: <FaLinkedin className="text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
   },
   {
     id: 2,
     name: "GitHub",
-    icon: <FaGithub className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
+    icon: <FaGithub className="text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://github.com/jaykumar108/"
   },
   {
     id: 3,
     name: "Instagram",
-    icon: <FaInstagram className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
+    icon: <FaInstagram className="text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://instagram.com/jay_kumar_sharma_/"
   },
   {
     id: 4,
     name: "Email",
-    icon: <FaVoicemail className="text-2xl text-gray-600 hover:text-orange-500 cursor-pointer transition-colors" />,
+    icon: <FaVoicemail className="text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors" />,
     imageUrl: "https://img.icons8.com/?size=100&id=63&format=png&color=000000", // Optional custom image URL
     link: "mailto:jaykumarsh2003@gmail.com"
   }
@@ -65,28 +65,28 @@ const footerSocialLinks = [
   {
     id: 1,
     name: "LinkedIn",
-    icon: <FaLinkedin className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
+    icon: <FaLinkedin className="text-2xl text-white hover:text-blue-400 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
   },
   {
     id: 2,
     name: "GitHub",
-    icon: <FaGithub className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
+    icon: <FaGithub className="text-2xl text-white hover:text-blue-400 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://github.com/jaykumar108/"
   },
   {
     id: 3,
     name: "Instagram",
-    icon: <FaInstagram className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
+    icon: <FaInstagram className="text-2xl text-white hover:text-blue-400 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
     link: "https://www.instagram.com/jay_kumar_sharma_/"
   },
   {
     id: 4,
     name: "Email",
-    icon: <FaVoicemail className="text-2xl text-white hover:text-orange-400 cursor-pointer transition-colors" />,
+    icon: <FaVoicemail className="text-2xl text-white hover:text-blue-400 cursor-pointer transition-colors" />,
     imageUrl: "https://img.icons8.com/?size=100&id=63&format=png&color=000000", // Optional custom image URL
     link: "mailto:jaykumarsh2003@gmail.com"
   }
@@ -100,7 +100,7 @@ const SocialLink = ({ item }) => {
         <img 
           src={item.imageUrl} 
           alt={item.name} 
-          className="w-6 h-6 text-gray-600 hover:text-orange-500 cursor-pointer transition-colors"
+          className="w-6 h-6 text-gray-600 hover:text-blue-500 cursor-pointer transition-colors"
         />
       ) : (
         item.icon
@@ -240,7 +240,7 @@ const ContactForm = () => {
               name="user_name"
               value={formData.user_name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${formErrors.user_name ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.user_name ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Enter Your Name"
               disabled={isLoading}
             />
@@ -255,7 +255,7 @@ const ContactForm = () => {
               name="user_email"
               value={formData.user_email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${formErrors.user_email ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.user_email ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Enter Your Email"
               disabled={isLoading}
             />
@@ -263,14 +263,14 @@ const ContactForm = () => {
           </div>
           
           <div>
-            <label htmlFor="phone" className="block text-gray-700 font-medium mb-1">Phone Number (Optional)</label>
+            <label htmlFor="phone" className="block text-gray-700 font-medium mb-1">Phone Number</label>
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="+91 1234567890"
               disabled={isLoading}
             />
@@ -284,7 +284,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
               placeholder="Your message here..."
               disabled={isLoading}
             ></textarea>
@@ -295,7 +295,7 @@ const ContactForm = () => {
         <div className="mt-4 text-center">
           <button 
             type="submit" 
-            className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-2 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
             disabled={isLoading}
           >
             {isLoading ? (
@@ -369,18 +369,29 @@ const Portfolio = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* name Content */}
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-orange-600">Hello, I'm</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Hello, I'm</h2>
               <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
               <p className="text-lg mt-2">
-                <span className="text-green-500 font-semibold ">Web Developer</span>
-                <span className="text-purple-600 font-semibold"> </span>
+                <span className="text-blue-500 font-semibold ">Web Developer</span>
+                <span className="text-teal-600 font-semibold"> </span>
               </p>
               <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
               I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
               </p>
-              <Button className="bg-orange-500 text-white px-6 py-3 rounded-lg mt-6 hover:bg-orange-600 transition-colors" onClick={handleNavigateToAbout}>
-                About Me
-              </Button>
+              
+              {/* Buttons Container */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
+                {/* View Resume Button */}
+                <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center space-x-2">
+                  <FaEye className="text-white" />
+                  <span>View Resume</span>
+                </button>
+
+                {/* About Me Button */}
+                <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToAbout}>
+                  About Me
+                </Button>
+              </div>
 
               {/* Social Links */}
               <div className="flex justify-center md:justify-start space-x-6 mt-8">
@@ -424,7 +435,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Let's Introduce About Myself</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 mb-6 leading-relaxed">
             Hello! I am Jay Kumar Sharma, a dedicated Web Developer with a passion for building interactive and user-friendly websites. I enjoy crafting digital experiences that are both visually appealing and highly functional. My focus is on creating seamless, efficient, and engaging web solutions that enhance user experience.
                </p>
@@ -443,15 +454,15 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">Offering cutting-edge web development services to help your business thrive in the digital landscape.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -461,8 +472,8 @@ const Portfolio = () => {
             
             {/* Service 2 */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -472,8 +483,8 @@ const Portfolio = () => {
             
             {/* Service 3 */}
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                 </svg>
               </div>
@@ -484,7 +495,7 @@ const Portfolio = () => {
 
           <div className="text-center mt-12">
             <Button 
-              className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+              className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
               onClick={handleNavigateToServices}
             >
               View All Services
@@ -498,7 +509,7 @@ const Portfolio = () => {
   <div className="container mx-auto px-6">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
-      <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+      <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
       <p className="text-gray-600 max-w-2xl mx-auto">Check out some of my recent works and personal projects.</p>
     </div>
     
@@ -521,7 +532,7 @@ const Portfolio = () => {
             <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
+            <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-blue-500 hover:text-blue-600 transition-colors">View Project</a>
             <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
           </div>
         </div>
@@ -545,7 +556,7 @@ const Portfolio = () => {
             <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://career-portal-project.vercel.app/" className="font-medium text-orange-500 hover:text-orange-600 transition-colors">View Project</a>
+            <a href="https://career-portal-project.vercel.app/" className="font-medium text-blue-500 hover:text-blue-600 transition-colors">View Project</a>
             <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
           </div>
         </div>
@@ -553,7 +564,7 @@ const Portfolio = () => {
     </div>
 
     <div className="text-center mt-12">
-      <Button className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
+      <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg">
         View All Projects
       </Button>
     </div>
@@ -565,7 +576,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Me</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">Feel free to reach out for collaborations, questions, or just to say hello!</p>
           </div>
           
@@ -580,7 +591,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-orange-600">Jay Kumar Sharma</h3>
+              <h3 className="text-2xl font-bold text-blue-400">Jay Kumar Sharma</h3>
               <div className="flex items-center space-x-3">
                 <img src="https://img.icons8.com/?size=100&id=JeO1Kv9jsmLr&format=png&color=000000" alt="Mail Icon" className="w-6 h-6 md:w-8 md:h-8"/>
                 <p className="text-gray-600 font-semibold text-white">jaykumarsh2003@gmail.com</p>
@@ -596,8 +607,8 @@ const Portfolio = () => {
             <div>
               <h4 className="font-semibold text-lg mb-4">Services</h4>
               <ul className="space-y-2 text-gray-600">
-                <li className="hover:text-orange-500 cursor-pointer text-white">Graphic Design , WordPress </li>
-                <li className="hover:text-orange-500 cursor-pointer text-white">Web Development</li>
+                <li className="hover:text-blue-400 cursor-pointer text-white">Graphic Design , WordPress </li>
+                <li className="hover:text-blue-400 cursor-pointer text-white">Web Development</li>
    
               </ul>
             </div>
@@ -605,10 +616,10 @@ const Portfolio = () => {
             <div>
               <h4 className="font-semibold text-lg mb-4">Important Links</h4>
               <ul className="space-y-2 text-gray-600">
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToAbout}>About Me</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToServices}>Services</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToContact}>Contact</li>
-                <li className="hover:text-orange-500 cursor-pointer text-white" onClick={handleNavigateToProject}>Projects</li>
+                <li className="hover:text-blue-400 cursor-pointer text-white" onClick={handleNavigateToAbout}>About Me</li>
+                <li className="hover:text-blue-400 cursor-pointer text-white" onClick={handleNavigateToServices}>Services</li>
+                <li className="hover:text-blue-400 cursor-pointer text-white" onClick={handleNavigateToContact}>Contact</li>
+                <li className="hover:text-blue-400 cursor-pointer text-white" onClick={handleNavigateToProject}>Projects</li>
 
               </ul>
             </div>

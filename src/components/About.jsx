@@ -182,9 +182,10 @@ const About = () => {
           "url": "https://jaysharma.space/about",
           "image": "https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png",
           "alternateName": ["Portfolio Jay Sharma", "Jay Sharma Space", "Jay Kumar Sharma"],
-          "givenName": "Jay",
-          "familyName": "Sharma",
-          "additionalName": "Kumar",
+          "givenName": "Jay Kumar Sharma",
+          "familyName": "Jay Kumar Sharma",
+          "additionalName": "Jay Kumar Sharma",
+          "gender": "Male",
           "nationality": "Indian",
           "address": {
             "@type": "PostalAddress",
@@ -273,7 +274,7 @@ const About = () => {
                 About Me
               </motion.h1>
               <motion.div 
-                className="w-20 h-1 bg-orange-500 mb-6"
+                className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mb-6"
                 initial={{ width: 0 }}
                 animate={{ width: 80 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -301,7 +302,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
                 <Button 
-                  className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors"
+                  className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                   onClick={handleNavigateToContact}
                 >
                   Contact Me
@@ -322,7 +323,7 @@ const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
-                  className="absolute inset-0 bg-orange-500 rounded-lg transform rotate-6"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg transform rotate-6"
                   animate={{ rotate: [6, 8, 6] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 ></motion.div>
@@ -350,7 +351,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Personal Information</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -389,11 +390,11 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <motion.div 
-                    className="bg-orange-100 p-3 rounded-full"
+                    className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <FaCode className="text-orange-500 text-xl" />
+                    <FaCode className="text-blue-500 text-xl" />
                   </motion.div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900">Frontend Development</h4>
@@ -408,11 +409,11 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <motion.div 
-                    className="bg-orange-100 p-3 rounded-full"
+                    className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <FaLaptopCode className="text-orange-500 text-xl" />
+                    <FaLaptopCode className="text-blue-500 text-xl" />
                   </motion.div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900">Backend Development</h4>
@@ -436,7 +437,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Education & Experience</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -455,11 +456,11 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-orange-100 p-4 rounded-full"
+                  className="bg-gradient-to-r from-blue-100 to-teal-100 p-4 rounded-full"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <FaUserGraduate className="text-orange-500 text-2xl" />
+                  <FaUserGraduate className="text-blue-500 text-2xl" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900">Education</h3>
               </motion.div>
@@ -468,7 +469,7 @@ const About = () => {
                 {education.map((item, index) => (
                   <motion.div 
                     key={item.id} 
-                    className="border-l-4 border-orange-500 pl-6 py-2"
+                    className="border-l-4 border-blue-500 pl-6 py-2"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -482,7 +483,7 @@ const About = () => {
                       <h4 className="text-xl font-bold text-gray-900">{item.degree}</h4>
                       <div className="flex justify-between items-center mb-2">
                         <p className="text-gray-600">{item.institution}</p>
-                        <p className="bg-orange-100 text-orange-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
+                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
                       </div>
                       <p className="text-gray-600">{item.description}</p>
                     </motion.div>
@@ -506,11 +507,11 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-orange-100 p-4 rounded-full"
+                  className="bg-gradient-to-r from-blue-100 to-teal-100 p-4 rounded-full"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <FaLaptopCode className="text-orange-500 text-2xl" />
+                  <FaLaptopCode className="text-blue-500 text-2xl" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900">Experience</h3>
               </motion.div>
@@ -519,7 +520,7 @@ const About = () => {
                 {experience.map((item, index) => (
                   <motion.div 
                     key={item.id} 
-                    className="border-l-4 border-orange-500 pl-6 py-2"
+                    className="border-l-4 border-blue-500 pl-6 py-2"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -533,7 +534,7 @@ const About = () => {
                       <h4 className="text-xl font-bold text-gray-900">{item.position}</h4>
                       <div className="flex justify-between items-center mb-2">
                         <p className="text-gray-600">{item.company}</p>
-                        <p className="bg-orange-100 text-orange-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
+                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
                       </div>
                       <p className="text-gray-600">{item.description}</p>
                     </motion.div>
@@ -556,7 +557,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -580,23 +581,23 @@ const About = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div 
-                    className="bg-orange-100 p-3 rounded-full"
+                    className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <FaCertificate className="text-orange-500 text-xl" />
+                    <FaCertificate className="text-blue-500 text-xl" />
                   </motion.div>
                   <h3 className="text-xl font-bold text-gray-900">{cert.title}</h3>
                 </motion.div>
                 <div className="flex justify-between items-center mb-3">
                   <p className="text-gray-600">{cert.issuer}</p>
-                  <p className="bg-orange-100 text-orange-600 text-sm px-3 py-1 rounded-full">{cert.year}</p>
+                  <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{cert.year}</p>
                 </div>             
                 <motion.a 
                   href={cert.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-orange-500 hover:text-orange-600 transition-colors flex items-center gap-2 text-sm mt-2"
+                  className="text-blue-500 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm mt-2"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
