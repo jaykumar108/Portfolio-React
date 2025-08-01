@@ -367,42 +367,8 @@ const Portfolio = () => {
         {/* middle Section */}
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* name Content */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Hello, I'm</h2>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
-              <p className="text-lg mt-2">
-                <span className="text-blue-500 font-semibold ">Web Developer</span>
-                <span className="text-teal-600 font-semibold"> </span>
-              </p>
-              <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
-              I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
-              </p>
-              
-              {/* Buttons Container */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
-                {/* View Resume Button */}
-                <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center space-x-2">
-                  <FaEye className="text-white" />
-                  <span>View Resume</span>
-                </button>
-
-                {/* About Me Button */}
-                <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToAbout}>
-                  About Me
-                </Button>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex justify-center md:justify-start space-x-6 mt-8">
-                {socialLinks.map((item) => (
-                  <SocialLink key={item.id} item={item} />
-                ))}
-              </div>
-            </div>
-
-            {/* Right Content - Profile Image */}
-            <div className="flex-1 flex justify-center md:justify-end">
+            {/* Profile Image - Top on mobile, right on desktop */}
+            <div className="flex-1 flex justify-center md:justify-end order-1 md:order-2">
               <div className="relative mx-auto md:mx-0">
                 <img
                   src="/Profile.png" 
@@ -424,6 +390,40 @@ const Portfolio = () => {
                   alt="Tailwind Icon"
                   className="absolute bottom-[-10px] md:bottom-[-20px] left-1/2 transform -translate-x-1/2 w-8 md:w-12 animate-bounce"
                 />
+              </div>
+            </div>
+
+            {/* name Content - Below image on mobile, left on desktop */}
+            <div className="flex-1 text-center md:text-left order-2 md:order-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Hello, I'm</h2>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
+              <p className="text-lg mt-2">
+                <span className="text-blue-500 font-semibold ">Web Developer</span>
+                <span className="text-teal-600 font-semibold"> </span>
+              </p>
+              <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
+              I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
+              </p>
+              
+              {/* Buttons Container */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
+                {/* View Resume Button */}
+                <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 w-full sm:w-auto">
+                  <FaEye className="text-white cursor-pointer" />
+                  <span>View Resume</span>
+                </button>
+
+                {/* About Me Button */}
+                <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToAbout}>
+                  About Me
+                </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex justify-center md:justify-start space-x-6 mt-8">
+                {socialLinks.map((item) => (
+                  <SocialLink key={item.id} item={item} />
+                ))}
               </div>
             </div>
           </div>
@@ -569,6 +569,7 @@ const Portfolio = () => {
       </Button>
     </div>
   </div>
+
 </section>
 
       {/* Contact Us Section */}
