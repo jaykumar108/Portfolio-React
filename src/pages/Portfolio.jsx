@@ -541,7 +541,7 @@ const Portfolio = () => {
       <Skills />
 
       {/* Services Section */}
-      <section className="py-16 dark:bg-gray-900">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Services</h2>
@@ -623,11 +623,11 @@ const Portfolio = () => {
             <span className="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://elearning-web-com.onrender.com/home" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="https://elearning-web-com.onrender.com/home" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
               <FaExternalLinkAlt className="text-sm" />
               <span className="text-sm font-medium">View Project</span>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
               <FaGithub className="text-sm" />
               <span className="text-sm font-medium">Source Code</span>
             </a>
@@ -653,11 +653,11 @@ const Portfolio = () => {
             <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://career-portal-project.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="https://career-portal-project.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
               <FaExternalLinkAlt className="text-sm" />
               <span className="text-sm font-medium">View Project</span>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
               <FaGithub className="text-sm" />
               <span className="text-sm font-medium">Source Code</span>
             </a>
