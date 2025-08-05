@@ -216,16 +216,16 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gray-50 rounded-lg p-6 shadow-md">
+    <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-md">
       {showThankYou && (
-        <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative animate-fade-in-down" role="alert">
+        <div className="mb-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 px-4 py-3 rounded relative animate-fade-in-down" role="alert">
           <strong className="font-bold">Thank You For Contacting! </strong>
           <span className="block sm:inline">I will contact you shortly.</span>
         </div>
       )}
 
       {errorMessage && (
-        <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative animate-fade-in-down" role="alert">
+        <div className="mb-4 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 px-4 py-3 rounded relative animate-fade-in-down" role="alert">
           <strong className="font-bold">Error: </strong>
           <span className="block sm:inline">{errorMessage}</span>
         </div>
@@ -234,62 +234,62 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="user_name" className="block text-gray-700 font-medium mb-1">Your Name*</label>
+            <label htmlFor="user_name" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Your Name*</label>
             <input
               type="text"
               id="user_name"
               name="user_name"
               value={formData.user_name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.user_name ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.user_name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
               placeholder="Enter Your Name"
               disabled={isLoading}
             />
-            {formErrors.user_name && <p className="text-red-500 text-sm mt-1">{formErrors.user_name}</p>}
+            {formErrors.user_name && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.user_name}</p>}
           </div>
           
           <div>
-            <label htmlFor="user_email" className="block text-gray-700 font-medium mb-1">Your Email*</label>
+            <label htmlFor="user_email" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Your Email*</label>
             <input
               type="email"
               id="user_email"
               name="user_email"
               value={formData.user_email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.user_email ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.user_email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
               placeholder="Enter Your Email"
               disabled={isLoading}
             />
-            {formErrors.user_email && <p className="text-red-500 text-sm mt-1">{formErrors.user_email}</p>}
+            {formErrors.user_email && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.user_email}</p>}
           </div>
           
           <div>
-            <label htmlFor="phone" className="block text-gray-700 font-medium mb-1">Phone Number</label>
+            <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Phone Number</label>
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="+91 1234567890"
               disabled={isLoading}
             />
           </div>
           
           <div className="md:col-span-2">
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-1">Message*</label>
+            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Message*</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
               placeholder="Your message here..."
               disabled={isLoading}
             ></textarea>
-            {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
+            {formErrors.message && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.message}</p>}
           </div>
         </div>
         
@@ -351,7 +351,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       <Helmet>
         {/* Primary Meta Tags */}
         <title>Jay Kumar Sharma - Web Developer | Portfolio</title>
@@ -486,13 +486,13 @@ const Portfolio = () => {
 
             {/* name Content - Always second on mobile, left on desktop */}
             <div className="w-full md:w-auto text-center md:text-left md:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Hello, I'm</h2>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400">Hello, I'm</h2>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mt-2 typing-animation duration-200">Jay Kumar Sharma</h1>
               <p className="text-lg mt-2">
-                <span className="text-blue-500 font-semibold ">Web Developer</span>
-                <span className="text-teal-600 font-semibold"> </span>
+                <span className="text-blue-500 dark:text-blue-400 font-semibold ">Web Developer</span>
+                <span className="text-teal-600 dark:text-teal-400 font-semibold"> </span>
               </p>
-              <p className="mt-4 text-gray-600 max-w-xl md:max-w-none text-center md:text-left">
+              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-xl md:max-w-none text-center md:text-left">
               I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
               </p>
               
@@ -522,15 +522,15 @@ const Portfolio = () => {
       </main>
 
       {/* About Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 mt-6 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Let's Introduce About Myself</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Introduce About Myself</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             Hello! I am Jay Kumar Sharma, a dedicated Web Developer with a passion for building interactive and user-friendly websites. I enjoy crafting digital experiences that are both visually appealing and highly functional. My focus is on creating seamless, efficient, and engaging web solutions that enhance user experience.
                </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             I am always eager to learn, grow, and take on new challenges in the ever-evolving world of web development. With a problem-solving mindset and a creative approach.
                 </p>
           </div>
@@ -541,46 +541,46 @@ const Portfolio = () => {
       <Skills />
 
       {/* Services Section */}
-      <section className="py-16">
+      <section className="py-16 dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Services</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">Offering cutting-edge web development services to help your business thrive in the digital landscape.</p>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Offering cutting-edge web development services to help your business thrive in the digital landscape.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Web Development</h3>
-              <p className="text-gray-600 text-center">Custom websites built with the latest technologies to deliver exceptional user experiences.</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">Web Development</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-center">Custom websites built with the latest technologies to deliver exceptional user experiences.</p>
             </div>
             
             {/* Service 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">WordPress Development</h3>
-              <p className="text-gray-600 text-center">We specialize in custom WordPress development, creating powerful, scalable, and easy-to-manage websites.</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">WordPress Development</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-center">We specialize in custom WordPress development, creating powerful, scalable, and easy-to-manage websites.</p>
             </div>
             
             {/* Service 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Graphic Design</h3>
-              <p className="text-gray-600 text-center">Our graphic design services help brands stand out with professional and creative designs.</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">Graphic Design</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-center">Our graphic design services help brands stand out with professional and creative designs.</p>
             </div>
           </div>
 
@@ -596,17 +596,17 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-<section id="project-section"className="py-16 bg-gray-50">
+<section id="project-section" className="py-16 bg-gray-50 dark:bg-gray-800">
   <div className="container mx-auto px-6">
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h2>
       <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-      <p className="text-gray-600 max-w-2xl mx-auto">Check out some of my recent works and personal projects.</p>
+      <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Check out some of my recent works and personal projects.</p>
     </div>
     
     <div className="flex flex-wrap justify-center gap-10">
       {/* Project 1 */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
+      <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
         <div className="h-48 sm:h-56 overflow-hidden">
           <img 
             src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//Screenshot%202025-03-21%20003001.png" 
@@ -615,22 +615,22 @@ const Portfolio = () => {
           />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">E-Learning</h3>
-          <p className="text-gray-600 mb-4">E-Learning Website is an interactive online learning platform designed to make education accessible, engaging, and effective for everyone</p>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">E-Learning</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">E-Learning Website is an interactive online learning platform designed to make education accessible, engaging, and effective for everyone</p>
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">HTML, CSS, JavaScript</span>
-            <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold">Node.js</span>
-            <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
+            <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-semibold">HTML, CSS, JavaScript</span>
+            <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded-full text-xs font-semibold">Node.js</span>
+            <span className="bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 px-2 py-1 rounded-full text-xs font-semibold">MonogoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-blue-500 hover:text-blue-600 transition-colors">View Project</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
+            <a href="https://elearning-web-com.onrender.com/home" className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">View Project</a>
+            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">Source Code</a>
           </div>
         </div>
       </div>
       
       {/* Project 2 */}
-      <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
+      <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full md:w-1/2 lg:w-1/3">
         <div className="h-48 sm:h-56 overflow-hidden">
           <img 
             src="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//carrer.png" 
@@ -639,16 +639,16 @@ const Portfolio = () => {
           />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Career Portal</h3>
-        <p className="text-gray-600 mb-4"> Users apply for job using this and Admin can Manage Job Applications on Admin Dashboard.</p>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Career Portal</h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4"> Users apply for job using this and Admin can Manage Job Applications on Admin Dashboard.</p>
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">React js, Tailwind CSS</span>
-            <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">Node js, Express js</span>
-            <span className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
+            <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-semibold">React js, Tailwind CSS</span>
+            <span className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded-full text-xs font-semibold">Node js, Express js</span>
+            <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-full text-xs font-semibold">MongoDB</span>
           </div>
           <div className="flex justify-between items-center">
-            <a href="https://career-portal-project.vercel.app/" className="font-medium text-blue-500 hover:text-blue-600 transition-colors">View Project</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 transition-colors">Source Code</a>
+            <a href="https://career-portal-project.vercel.app/" className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">View Project</a>
+            <a href="#" className="font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">Source Code</a>
           </div>
         </div>
       </div>
@@ -664,22 +664,22 @@ const Portfolio = () => {
 </section>
 
       {/* Contact Us Section */}
-      <section id="contact-section" className="py-16 bg-white">
+      <section id="contact-section" className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Me</h2>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Contact Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">Feel free to reach out for collaborations, questions, or just to say hello!</p>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Feel free to reach out for collaborations, questions, or just to say hello!</p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto mb-20">
             <ContactForm />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 backdrop-blur-sm mt-20 py-10 border text-white">
+      <footer className="bg-gray-800 backdrop-blur-sm py-10 border text-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">

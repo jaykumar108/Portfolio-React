@@ -8,6 +8,7 @@ import Service from './components/Service'
 import NotFound from './components/NotFound'
 import Loading from './components/ui/loading'
 import emailjs from 'emailjs-com'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
   const location = useLocation()
@@ -47,7 +48,7 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Helmet>
         {/* Primary Meta Tags */}
         <title>Jay Sharma - MERN Stack Developer | Portfolio</title>
@@ -134,7 +135,7 @@ function App() {
         <Route path="/services" element={<Service />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </ThemeProvider>
   )
 }
 

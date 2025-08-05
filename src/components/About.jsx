@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import ModernNavbar from './ModernNavbar';
 import ToggleButton from './ToggleButton';
+import { CardSwipe } from './ui/card-swipe';
 
 const About = () => {
   const navigate = useNavigate();
@@ -44,6 +45,13 @@ const About = () => {
       }
     }, 100);
   };
+
+  // Profile images for CardSwipe
+  const profileImages = [
+    { src: "/Profile.png", alt: "Jay Sharma Profile 1" },
+    { src: "/img.jpg", alt: "Jay Sharma Profile 2" },
+    { src: "/img2.png", alt: "Jay Sharma Profile 3" },
+  ];
 
   // Education data
   const education = [
@@ -129,7 +137,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       <Helmet>
         {/* Primary Meta Tags */}
         <title>About Jay Sharma - Full Stack Developer | Education & Experience</title>
@@ -255,7 +263,7 @@ const About = () => {
       />
       
       {/* Hero Section - Add top padding to account for fixed navbar */}
-      <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50">
+      <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* Left Content */}
@@ -266,7 +274,7 @@ const About = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <motion.h1 
-                className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -280,7 +288,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
               ></motion.div>
               <motion.p 
-                className="text-gray-600 mb-6 leading-relaxed"
+                className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -288,7 +296,7 @@ const About = () => {
                 Hello! I'm Jay Kumar Sharma, a passionate web developer with expertise in modern frontend and backend technologies. I love creating beautiful, functional, and user-friendly websites.
               </motion.p>
               <motion.p 
-                className="text-gray-600 mb-6 leading-relaxed"
+                className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -310,7 +318,7 @@ const About = () => {
               </motion.div>
             </motion.div>
             
-            {/* Right Content - Profile Image */}
+            {/* Right Content - Profile Image CardSwipe */}
             <motion.div 
               className="flex-1 flex justify-center md:justify-end"
               initial={{ opacity: 0, x: 50 }}
@@ -319,7 +327,7 @@ const About = () => {
             >
               <motion.div 
                 className="relative w-64 h-64 md:w-80 md:h-80"
-                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
@@ -327,13 +335,13 @@ const About = () => {
                   animate={{ rotate: [6, 8, 6] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 ></motion.div>
-                <motion.img
-                  src="/Profile.png" 
-                  alt="Jay Kumar Sharma" 
-                  className="relative z-10 rounded-lg shadow-xl w-full h-full object-cover"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                />
+                <div className="relative z-10 w-full h-full">
+                  <CardSwipe 
+                    images={profileImages} 
+                    autoplayDelay={3000} 
+                    slideShadows={false} 
+                  />
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -350,37 +358,37 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Personal Information</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Personal Information</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">About Me</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">About Me</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 I am a dedicated and enthusiastic web developer with a passion for creating responsive and user-friendly websites. I have a strong understanding of frontend technologies.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
               With hands-on experience in web development, I specialize in creating visually appealing, responsive, and user-friendly interfaces. 
               </p>
             </motion.div>
             
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">My Expertise</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Expertise</h3>
               <ul className="space-y-4">
                 <motion.li 
                   className="flex items-start gap-4"
@@ -397,8 +405,8 @@ const About = () => {
                     <FaCode className="text-blue-500 text-xl" />
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">Frontend Development</h4>
-                    <p className="text-gray-600">Creating responsive and interactive websites using modern technologies like React, HTML5, CSS3, and JavaScript.</p>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Frontend Development</h4>
+                    <p className="text-gray-600 dark:text-gray-300">Creating responsive and interactive websites using modern technologies like React, HTML5, CSS3, and JavaScript.</p>
                   </div>
                 </motion.li>
                 <motion.li 
@@ -416,8 +424,8 @@ const About = () => {
                     <FaLaptopCode className="text-blue-500 text-xl" />
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">Backend Development</h4>
-                    <p className="text-gray-600">Building robust server-side applications using Node.js, Express, and MongoDB.</p>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Backend Development</h4>
+                    <p className="text-gray-600 dark:text-gray-300">Building robust server-side applications using Node.js, Express, and MongoDB.</p>
                   </div>
                 </motion.li>
               </ul>
@@ -427,7 +435,7 @@ const About = () => {
       </section>
 
       {/* Education & Experience Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <motion.div 
             className="text-center mb-12"
@@ -436,7 +444,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Education & Experience</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Education & Experience</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
@@ -462,7 +470,7 @@ const About = () => {
                 >
                   <FaUserGraduate className="text-blue-500 text-2xl" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900">Education</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h3>
               </motion.div>
               
               <div className="space-y-8">
@@ -476,16 +484,16 @@ const About = () => {
                     viewport={{ once: true }}
                   >
                     <motion.div 
-                      className="bg-white p-6 rounded-lg shadow-md"
+                      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
                       whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                       transition={{ duration: 0.3 }}
                     >
-                      <h4 className="text-xl font-bold text-gray-900">{item.degree}</h4>
+                      <h4 className="text-xl font-bold text-gray-900 dark:text-white">{item.degree}</h4>
                       <div className="flex justify-between items-center mb-2">
-                        <p className="text-gray-600">{item.institution}</p>
-                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
+                        <p className="text-gray-600 dark:text-gray-300">{item.institution}</p>
+                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 text-sm px-3 py-1 rounded-full">{item.year}</p>
                       </div>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                     </motion.div>
                   </motion.div>
                 ))}
@@ -513,7 +521,7 @@ const About = () => {
                 >
                   <FaLaptopCode className="text-blue-500 text-2xl" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900">Experience</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Experience</h3>
               </motion.div>
               
               <div className="space-y-8">
@@ -527,16 +535,16 @@ const About = () => {
                     viewport={{ once: true }}
                   >
                     <motion.div 
-                      className="bg-white p-6 rounded-lg shadow-md"
+                      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
                       whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                       transition={{ duration: 0.3 }}
                     >
-                      <h4 className="text-xl font-bold text-gray-900">{item.position}</h4>
+                      <h4 className="text-xl font-bold text-gray-900 dark:text-white">{item.position}</h4>
                       <div className="flex justify-between items-center mb-2">
-                        <p className="text-gray-600">{item.company}</p>
-                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{item.year}</p>
+                        <p className="text-gray-600 dark:text-gray-300">{item.company}</p>
+                        <p className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 text-sm px-3 py-1 rounded-full">{item.year}</p>
                       </div>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                     </motion.div>
                   </motion.div>
                 ))}
@@ -556,7 +564,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
           
@@ -564,7 +572,7 @@ const About = () => {
             {certifications.map((cert, index) => (
               <motion.div 
                 key={cert.id} 
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

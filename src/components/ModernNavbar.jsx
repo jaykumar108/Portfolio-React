@@ -3,6 +3,7 @@ import { FaBars, FaTimes, FaCode, FaHome, FaUser, FaCogs, FaFolder, FaEnvelope }
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,6 +69,11 @@ const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
                   </Button>
                 );
               })}
+              
+              {/* Theme Toggle */}
+              <div className="ml-4">
+                <ThemeToggle />
+              </div>
             </div>
 
             {/* Empty div for mobile spacing */}
@@ -139,6 +145,14 @@ const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
                 </Button>
               );
             })}
+          </div>
+
+          {/* Theme Toggle for Mobile */}
+          <div className="mb-6">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-foreground">Theme</span>
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Footer */}
