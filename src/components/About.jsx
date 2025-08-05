@@ -49,7 +49,7 @@ const About = () => {
   // Profile images for CardSwipe
   const profileImages = [
     { src: "/Profile.png", alt: "Jay Sharma Profile 1" },
-    { src: "/img.jpg", alt: "Jay Sharma Profile 2" },
+    { src: "/img.png", alt: "Jay Sharma Profile 2" },
     { src: "/img2.png", alt: "Jay Sharma Profile 3" },
   ];
 
@@ -90,6 +90,49 @@ const About = () => {
     }
   ];
 
+  // Skills data
+  const skills = [
+    { 
+      category: 'Frontend', 
+      items: [
+        { name: 'React', icon: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000' },
+        { name: 'Next.js', icon: 'https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png&color=000000' },
+        { name: 'TypeScript', icon: 'https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000' },
+        { name: 'Tailwind CSS', icon: 'https://img.icons8.com/?size=100&id=x7XMNGh2vdqA&format=png&color=000000' },
+        { name: 'Framer Motion', icon: 'https://img.icons8.com/?size=100&id=GRzLkhOFEp0z&format=png&color=000000' }
+      ] 
+    },
+    { 
+      category: 'Backend', 
+      items: [
+        { name: 'Node.js', icon: 'https://img.icons8.com/?size=100&id=54087&format=png&color=000000' },
+        { name: 'Express.js', icon: 'https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000' },
+        { name: 'Python', icon: 'https://img.icons8.com/?size=100&id=13441&format=png&color=000000' },
+        { name: 'MongoDB', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
+        // { name: 'PostgreSQL', icon: 'https://img.icons8.com/?size=100&id=LwQEs9KnDgIo&format=png&color=000000' }
+      ] 
+    },
+    { 
+      category: 'Mobile', 
+      items: [
+        { name: 'React Native', icon: 'https://img.icons8.com/?size=100&id=35989&format=png&color=000000' },
+        // { name: 'Flutter', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
+        // { name: 'iOS', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
+        { name: 'Android', icon: 'https://img.icons8.com/?size=100&id=11138&format=png&color=000000' }
+      ] 
+    },
+    { 
+      category: 'Tools', 
+      items: [
+        { name: 'Git', icon: 'https://img.icons8.com/?size=100&id=20906&format=png&color=000000' },
+        { name: 'GitHub', icon: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000' },
+        { name: 'Docker', icon: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000' },
+        // { name: 'AWS', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
+        { name: 'VS Code', icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000' }
+      ] 
+    },
+  ];
+
   // Certification data
   const certifications = [
     {
@@ -121,19 +164,12 @@ const About = () => {
       link: "https://drive.google.com/file/d/1RX8WpnWy6V09JayhWHyQD7fc3kWvqZLZ/view?usp=sharing"
     },
     {
-      id: 5,
-      title: "Advanced Excel Training",
-      issuer: "STP Computer Education",
-      year: "2024", 
-      link: "https://drive.google.com/file/d/1s1ucXdXogQuUttDL267ha6JpstIVKpzO/view?usp=sharing"
-    },{
-      id: 5,
+      id: 6,
       title: "HTML, CSS Workshop 5 Days",
       issuer: "Lets Upgrade",
       year: "2024", 
       link: "https://drive.google.com/file/d/1pZiWhIDVvsXSMxVPnZAoSW4q9bKG287b/view?usp=sharing"
     }
-
   ];
 
   return (
@@ -430,6 +466,60 @@ const About = () => {
                 </motion.li>
               </ul>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Skills & Technologies
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              I work with modern technologies and frameworks to build robust, scalable applications
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skills.map((skillGroup, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{skillGroup.category}</h3>
+                <div className="space-y-2">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skillIndex}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '100%' }}
+                      transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 rounded-full px-3 py-2 flex items-center justify-between"
+                    >
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{skill.name}</span>
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name}
+                        className="w-5 h-5 object-contain"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

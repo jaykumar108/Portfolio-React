@@ -164,7 +164,7 @@ const Service = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       <Helmet>
         {/* Primary Meta Tags */}
         <title>Jay Kumar Sharma - Web Developer | Full Stack Developer</title>
@@ -322,12 +322,12 @@ const Service = () => {
       />
       
       {/* Hero Section - Add top padding to account for fixed navbar */}
-      <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50">
+      <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">My Services</h1>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               I offer a wide range of web development services to help businesses establish a strong online presence.
               From designing beautiful user interfaces to developing robust backend systems, I can help turn your ideas into reality.
             </p>
@@ -340,20 +340,20 @@ const Service = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(service => (
-              <div key={service.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-50 to-teal-50 p-6 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+              <div key={service.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div className="bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900 dark:to-teal-900 p-6 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-md">
                     {service.icon}
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <span className="text-blue-500 mt-1">•</span>
-                        <span className="text-gray-600">{feature}</span>
+                        <span className="text-blue-500 dark:text-blue-400 mt-1">•</span>
+                        <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -370,12 +370,12 @@ const Service = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Process</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               I follow a systematic approach to ensure every project is completed efficiently and meets the highest standards of quality.
             </p>
           </div>
@@ -383,12 +383,12 @@ const Service = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {processSteps.map(step => (
-                <div key={step.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <div key={step.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                     {step.id}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -400,24 +400,24 @@ const Service = () => {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Choose Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <FaLaptopCode className="text-4xl text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Expertise</h3>
-              <p className="text-gray-600">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+              <FaLaptopCode className="text-4xl text-blue-500 dark:text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Technical Expertise</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 With years of experience in web development, I have developed a strong foundation in both frontend and backend technologies. 
                 I stay updated with the latest trends and best practices to deliver modern and efficient solutions.
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <FaSearch className="text-4xl text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Attention to Detail</h3>
-              <p className="text-gray-600">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+              <FaSearch className="text-4xl text-blue-500 dark:text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Attention to Detail</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 I believe that small details make a big difference. From pixel-perfect designs to optimized code, 
                 I pay close attention to every aspect of your project to ensure the highest quality results.
               </p>
@@ -427,11 +427,11 @@ const Service = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50">
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900 dark:to-teal-900">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h2>
-            <p className="text-gray-600 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to Start Your Project?</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">
               Let's work together to create something amazing. Contact me today to discuss your project requirements.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
