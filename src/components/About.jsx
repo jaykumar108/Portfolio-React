@@ -595,17 +595,17 @@ const About = () => {
                   >
                     <FaCertificate className="text-blue-500 text-xl" />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900">{cert.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{cert.title}</h3>
                 </motion.div>
                 <div className="flex justify-between items-center mb-3">
-                  <p className="text-gray-600">{cert.issuer}</p>
-                  <p className="bg-gradient-to-r from-blue-100 to-teal-100 text-blue-600 text-sm px-3 py-1 rounded-full">{cert.year}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{cert.issuer}</p>
+                  <p className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 text-sm px-3 py-1 rounded-full">{cert.year}</p>
                 </div>             
                 <motion.a 
                   href={cert.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-blue-500 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm mt-2"
+                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors flex items-center gap-2 text-sm mt-2"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
