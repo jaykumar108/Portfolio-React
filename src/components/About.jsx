@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaCode, FaLaptopCode, FaUserGraduate, FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Button from './Button';
-import Navbar from './Navbar';
+import ModernNavbar from './ModernNavbar';
 import ToggleButton from './ToggleButton';
 
 const About = () => {
@@ -245,7 +245,7 @@ const About = () => {
       </Helmet>
       
       {/* Navbar */}
-      <Navbar 
+      <ModernNavbar 
         onHomeClick={handleNavigateToHome} 
         onAboutClick={() => {}} 
         onServiceClick={handleNavigateToServices}

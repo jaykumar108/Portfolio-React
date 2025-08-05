@@ -12,7 +12,7 @@ import {
   FaPalette 
 } from 'react-icons/fa';
 import Button from './Button';
-import Navbar from './Navbar';
+import ModernNavbar from './ModernNavbar';
 import ToggleButton from './ToggleButton';
 
 const Service = () => {
@@ -312,7 +312,7 @@ const Service = () => {
       </Helmet>
       
       {/* Navbar */}
-      <Navbar 
+      <ModernNavbar 
         onHomeClick={handleNavigateToHome} 
         onAboutClick={handleNavigateToAbout}
         onServiceClick={() => {}}

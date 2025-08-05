@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { FaTwitter, FaLinkedin, FaBehance, FaEye, FaBars, FaTimes, FaInstagram, FaGithub, FaVoicemail, FaMailchimp, FaMailBulk, FaDownload } from "react-icons/fa";
 import Button from "../components/Button";
-import Navbar from "../components/Navbar";
+import ModernNavbar from "../components/ModernNavbar";
 import Skills from "../components/Skills";
 import ToggleButton from "../components/ToggleButton";
 import emailjs from "emailjs-com";
@@ -444,7 +444,7 @@ const Portfolio = () => {
       
       <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
       {/* Navbar */}
-      <Navbar 
+      <ModernNavbar 
         onHomeClick={() => navigate('/')} 
         onAboutClick={handleNavigateToAbout}
         onServiceClick={handleNavigateToServices}
