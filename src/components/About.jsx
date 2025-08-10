@@ -99,7 +99,7 @@ const About = () => {
         { name: 'Next.js', icon: 'https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png&color=000000' },
         { name: 'TypeScript', icon: 'https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000' },
         { name: 'Tailwind CSS', icon: 'https://img.icons8.com/?size=100&id=x7XMNGh2vdqA&format=png&color=000000' },
-        { name: 'Framer Motion', icon: 'https://img.icons8.com/?size=100&id=GRzLkhOFEp0z&format=png&color=000000' }
+        // { name: 'Framer Motion', icon: 'https://img.icons8.com/?size=100&id=GRzLkhOFEp0z&format=png&color=000000' }
       ] 
     },
     { 
@@ -126,7 +126,7 @@ const About = () => {
       items: [
         { name: 'Git', icon: 'https://img.icons8.com/?size=100&id=20906&format=png&color=000000' },
         { name: 'GitHub', icon: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000' },
-        { name: 'Docker', icon: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000' },
+        // { name: 'Docker', icon: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000' },
         // { name: 'AWS', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
         { name: 'VS Code', icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000' }
       ] 
