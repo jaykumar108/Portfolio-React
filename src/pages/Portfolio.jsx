@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import ModernNavbar from "../components/ModernNavbar";
 import Skills from "../components/Skills";
 import ToggleButton from "../components/ToggleButton";
+import { HoverEffect } from "../components/ui/card-hover-effect";
 import emailjs from "emailjs-com";
 
 // Add custom CSS for typing animation
@@ -350,6 +351,25 @@ const Portfolio = () => {
     }
   };
 
+  // Services data for hover effect
+  const servicesData = [
+    {
+      title: "Web Development",
+      description: "Custom websites built with the latest technologies to deliver exceptional user experiences. Specializing in React, Node.js, and modern web frameworks.",
+      link: "#"
+    },
+    {
+      title: "WordPress Development", 
+      description: "We specialize in custom WordPress development, creating powerful, scalable, and easy-to-manage websites with custom themes and plugins.",
+      link: "#"
+    },
+    {
+      title: "Graphic Design",
+      description: "Our graphic design services help brands stand out with professional and creative designs including logos, banners, and marketing materials.",
+      link: "#"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       <Helmet>
@@ -549,40 +569,7 @@ const Portfolio = () => {
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Offering cutting-edge web development services to help your business thrive in the digital landscape.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">Web Development</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">Custom websites built with the latest technologies to deliver exceptional user experiences.</p>
-            </div>
-            
-            {/* Service 2 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">WordPress Development</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">We specialize in custom WordPress development, creating powerful, scalable, and easy-to-manage websites.</p>
-            </div>
-            
-            {/* Service 3 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center">Graphic Design</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">Our graphic design services help brands stand out with professional and creative designs.</p>
-            </div>
-          </div>
+          <HoverEffect items={servicesData} className="max-w-5xl mx-auto" />
 
           <div className="text-center mt-12">
             <Button 
