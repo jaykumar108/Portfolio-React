@@ -40,7 +40,7 @@ function App() {
     return (
       <>
         <Helmet>
-          <title>Loading... - Jay Sharma Portfolio</title>
+          <title>Loading... - Jay Kumar Sharma Portfolio</title>
         </Helmet>
         <Loading text="Welcome to Jay Sharma's Portfolio" />
       </>
@@ -51,14 +51,14 @@ function App() {
     <ThemeProvider>
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Jay Sharma - MERN Stack Developer | Portfolio</title>
-        <meta name="title" content="Jay Sharma - Full Stack Developer | Portfolio" />
-        <meta name="description" content="Professional portfolio of Jay Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies. View projects, skills, and contact information." />
-        <meta name="keywords" content="jay sharma, jay sharma web developer, jay MERN stack Developer, jay sharma space, Jay Kumar sharma, Full Stack Developer, React Developer, Node.js Developer, Web Developer, Portfolio, Frontend Developer, Backend Developer, JavaScript, TypeScript, React, Node.js, MongoDB, Express.js, portfolio jay sharma, jay sharma netlify, jay sharma portfolio netlify" />
-        <meta name="subject" content="Portfolio Jay Sharma - Full Stack Developer" />
-        <meta name="classification" content="Portfolio Jay Sharma" />
-        <meta name="category" content="Jay Sharma Space Portfolio" />
-        <meta name="author" content="Jay Sharma" />
+        <title>Jay Kumar Sharma - MERN Stack Developer | Portfolio</title>
+        <meta name="title" content="Jay Kumar Sharma - Full Stack Developer | Portfolio" />
+        <meta name="description" content="Professional portfolio of Jay Kumar Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies. View projects, skills, and contact information." />
+        <meta name="keywords" content="jay kumar sharma, jay sharma, jay sharma Developer, jay kumar sharma web developer, jay kumar sharma mern stack developer, jay kumar sharma full stack developer, jay kumar sharma portfolio, jay kumar sharma space, jay kumar sharma react developer, jay kumar sharma node.js developer, jay kumar sharma javascript developer, jay kumar sharma mongodb developer, jay kumar sharma express developer, jay kumar sharma frontend developer, jay kumar sharma backend developer, jay kumar sharma india, jay kumar sharma remote developer, jay kumar sharma freelance developer, jay kumar sharma projects, jay kumar sharma skills, jay kumar sharma expertise, jay kumar sharma professional developer, jay kumar sharma web development, jay kumar sharma software development, jay kumar sharma programming, jay kumar sharma coding, jay kumar sharma tech, jay kumar sharma technology, jay kumar sharma digital, jay kumar sharma online, jay kumar sharma website, jay kumar sharma application, jay kumar sharma software, jay kumar sharma solution, jay kumar sharma service, jay kumar sharma consulting" />
+        <meta name="subject" content="Portfolio Jay Kumar Sharma - Full Stack Developer" />
+        <meta name="classification" content="Portfolio Jay Kumar Sharma" />
+        <meta name="category" content="Jay Kumar Sharma Space Portfolio" />
+        <meta name="author" content="Jay Kumar Sharma" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
@@ -66,8 +66,8 @@ function App() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/" />
-        <meta property="og:title" content="Jay Sharma - Full Stack Developer | Portfolio" />
-        <meta property="og:description" content="Professional portfolio of Jay Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies." />
+        <meta property="og:title" content="Jay Kumar Sharma - Full Stack Developer | Portfolio" />
+        <meta property="og:description" content="Professional portfolio of Jay Kumar Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies." />
         <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="og:site_name" content="Jay Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
@@ -100,7 +100,7 @@ function App() {
           "description": "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies",
           "url": "https://jaysharma.space/",
           "image": "https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png",
-          "alternateName": ["Portfolio Jay Sharma", "Jay Sharma Space", "Jay Kumar Sharma"],
+          "alternateName": ["Jay Sharma", "Portfolio Jay Kumar Sharma", "Jay Kumar Sharma Space"],
           "sameAs": [
             "https://github.com/jaykumar108/",
             "https://linkedin.com/in/jaykumar108/",
@@ -118,7 +118,7 @@ function App() {
             "Portfolio Development",
             "MERN Stack Development"
           ],
-          "additionalName": "Portfolio Jay Sharma",
+          "additionalName": "Portfolio Jay Kumar Sharma",
           "identifier": {
             "@type": "PropertyValue",
             "name": "Portfolio URL",

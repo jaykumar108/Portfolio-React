@@ -171,7 +171,7 @@ const Service = () => {
         <meta name="title" content="Web Development Services - Jay Kumar Sharma | Full Stack Developer" />
         <meta name="description" content="Professional web development services by Jay Kumar Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
         <meta name="keywords" content="web development services, jay sharma services, jay sharma web developer services, jay sharma MERN stack services, jay sharma space services, Jay Kumar sharma services, react development services, node.js development, responsive web design, graphic design services, backend development, frontend development, custom website development, web application development, portfolio development, WordPress development, CMS development, API development, database design, cloud integration, responsive UI design, social media post design, logo design, template design, card design" />
-        <meta name="author" content="Jay Sharma" />
+        <meta name="author" content="Jay Kumar Sharma" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
@@ -183,8 +183,8 @@ const Service = () => {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/services" />
-        <meta property="og:title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
-        <meta property="og:description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications." />
+        <meta property="og:title" content="Jay Kumar Sharma - Web Development Services | Full Stack Developer" />
+        <meta property="og:description" content="Jay Kumar Sharma - Professional web development services. Specializing in React, Node.js, responsive design, graphic design, and backend development. Get custom websites and web applications from Jay Kumar Sharma." />
         <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -195,10 +195,10 @@ const Service = () => {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/services" />
-        <meta property="twitter:title" content="Web Development Services - Jay Sharma | Full Stack Developer" />
-        <meta property="twitter:description" content="Professional web development services by Jay Sharma. Specializing in React, Node.js, responsive design, and backend development." />
+        <meta property="twitter:title" content="Jay Kumar Sharma - Web Development Services | Full Stack Developer" />
+        <meta property="twitter:description" content="Jay Kumar Sharma - Professional web development services. Specializing in React, Node.js, responsive design, and backend development." />
         <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
-        <meta property="twitter:image:alt" content="Web Development Services - Jay Sharma" />
+        <meta property="twitter:image:alt" content="Jay Kumar Sharma - Web Development Services" />
         <meta property="twitter:creator" content="@jaysharma" />
         <meta property="twitter:site" content="@jaysharma" />
         
@@ -211,11 +211,11 @@ const Service = () => {
         {
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Web Development Services",
-          "description": "Professional web development services including frontend development, backend development, graphic design, and responsive web design",
+          "name": "Jay Kumar Sharma Web Development Services",
+          "description": "Jay Kumar Sharma - Professional web development services including frontend development, backend development, graphic design, and responsive web design",
           "provider": {
             "@type": "Person",
-            "name": "Jay Sharma",
+            "name": "Jay Kumar Sharma",
             "jobTitle": "Full Stack Developer",
             "url": "https://jaysharma.space/"
           },
@@ -280,8 +280,8 @@ const Service = () => {
         {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Jay Sharma Web Development Services",
-          "description": "Professional web development and design services",
+          "name": "Jay Kumar Sharma Web Development Services",
+          "description": "Jay Kumar Sharma - Professional web development and design services",
           "url": "https://jaysharma.space/services",
           "telephone": "",
           "email": "",
@@ -430,9 +430,9 @@ const Service = () => {
       <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900 dark:to-teal-900">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to Start Your Project?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Ready to Start Your Project with Jay Kumar Sharma?</h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              Let's work together to create something amazing. Contact me today to discuss your project requirements.
+              Let's work together with Jay Kumar Sharma to create something amazing. Contact Jay Kumar Sharma today to discuss your project requirements.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToContact}>

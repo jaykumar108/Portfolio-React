@@ -176,14 +176,14 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>About Jay Sharma - Full Stack Developer | Education & Experience</title>
-        <meta name="title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <title>About Jay Kumar Sharma - Full Stack Developer | Education & Experience</title>
+        <meta name="title" content="About Jay Kumar Sharma - Full Stack Developer | Education & Experience" />
         <meta name="description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies. View education, experience, and certifications." />
-        <meta name="keywords" content="about jay sharma, jay sharma education, jay sharma experience, jay sharma certifications, jay sharma background, jay sharma developer, jay sharma portfolio about, jay sharma skills, jay sharma qualifications, jay sharma resume, jay sharma developer profile, jay sharma web developer about, jay sharma MERN stack developer, jay sharma space about, Jay Kumar sharma about" />
-        <meta name="author" content="Jay Sharma" />
+        <meta name="keywords" content="about jay kumar sharma, jay kumar sharma education, jay kumar sharma experience, jay kumar sharma certifications, jay kumar sharma background, jay kumar sharma developer, jay kumar sharma portfolio about, jay kumar sharma skills, jay kumar sharma qualifications, jay kumar sharma resume, jay kumar sharma developer profile, jay kumar sharma web developer about, jay kumar sharma mern stack developer, jay kumar sharma space about, jay kumar sharma b.tech, jay kumar sharma computer science, jay kumar sharma sandip university, jay kumar sharma madhubani, jay kumar sharma india, jay kumar sharma professional developer, jay kumar sharma career, jay kumar sharma work experience, jay kumar sharma internship, jay kumar sharma wordpress developer, jay kumar sharma cms developer, jay kumar sharma web development intern, jay kumar sharma phn technology, jay kumar sharma mithila stack, jay kumar sharma darbhanga" />
+        <meta name="author" content="Jay Kumar Sharma" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="language" content="English" />
-        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit-after" content="7 days" />  
         <meta name="rating" content="General" />
         <meta name="distribution" content="Global" />
         <meta name="coverage" content="Worldwide" />
@@ -192,22 +192,22 @@ const About = () => {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/about" />
-        <meta property="og:title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <meta property="og:title" content="About Jay Kumar Sharma - Full Stack Developer | Education & Experience" />
         <meta property="og:description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies. View education, experience, and certifications." />
         <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="About Jay Sharma - Full Stack Developer" />
-        <meta property="og:site_name" content="Jay Sharma Portfolio" />
+        <meta property="og:image:alt" content="About Jay Kumar Sharma - Full Stack Developer" />
+        <meta property="og:site_name" content="Jay Kumar Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/about" />
-        <meta property="twitter:title" content="About Jay Sharma - Full Stack Developer | Education & Experience" />
+        <meta property="twitter:title" content="About Jay Kumar Sharma - Full Stack Developer | Education & Experience" />
         <meta property="twitter:description" content="Learn more about Jay Kumar Sharma, a passionate Full Stack Developer with expertise in React, Node.js, and modern web technologies." />
         <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
-        <meta property="twitter:image:alt" content="About Jay Sharma - Full Stack Developer" />
+        <meta property="twitter:image:alt" content="About Jay Kumar Sharma - Full Stack Developer" />
         <meta property="twitter:creator" content="@jaysharma" />
         <meta property="twitter:site" content="@jaysharma" />
         
@@ -220,12 +220,12 @@ const About = () => {
         {
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "Jay Sharma",
+          "name": "Jay Kumar Sharma",
           "jobTitle": "Full Stack Developer",
           "description": "Professional Full Stack Developer specializing in React, Node.js, and modern web technologies",
           "url": "https://jaysharma.space/about",
           "image": "https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png",
-          "alternateName": ["Portfolio Jay Sharma", "Jay Sharma Space", "Jay Kumar Sharma"],
+          "alternateName": ["Jay Sharma", "Portfolio Jay Kumar Sharma", "Jay Kumar Sharma Space"],
           "givenName": "Jay Kumar Sharma",
           "familyName": "Jay Kumar Sharma",
           "additionalName": "Jay Kumar Sharma",

@@ -7,6 +7,7 @@ import ModernNavbar from "../components/ModernNavbar";
 import Skills from "../components/Skills";
 import ToggleButton from "../components/ToggleButton";
 import { HoverEffect } from "../components/ui/card-hover-effect";
+import { CardContainer, CardBody, CardItem } from "../components/ui/3d-card";
 import emailjs from "emailjs-com";
 
 // Add custom CSS for typing animation
@@ -377,7 +378,7 @@ const Portfolio = () => {
         <title>Jay Kumar Sharma - Web Developer | Portfolio</title>
         <meta name="title" content="Jay Kumar Sharma - Web Developer | Portfolio" />
         <meta name="description" content="Jay Kumar Sharma is a passionate Web Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and services." />
-        <meta name="keywords" content="Jay Kumar Sharma, Jai Sharma, Web Developer, React Developer, Node.js Developer, Frontend Developer, Full Stack Developer, Portfolio, Web Development, JavaScript, React, Node.js, MongoDB, Express.js, Tailwind CSS" />
+        <meta name="keywords" content="jay kumar sharma, jay sharma, jai sharma, jay kumar sharma web developer, jay kumar sharma react developer, jay kumar sharma node.js developer, jay kumar sharma frontend developer, jay kumar sharma full stack developer, jay kumar sharma portfolio, jay kumar sharma web development, jay kumar sharma javascript, jay kumar sharma react, jay kumar sharma node.js, jay kumar sharma mongodb, jay kumar sharma express.js, jay kumar shrma tailwind css, jay kumar sharma mern stack, jay kumar sharma india, jay kumar sharma darbhanga, jay kumar sharma bihar, jay kumar sharma freelance developer, jay kumar sharma remote developer, jay kumar sharma professional developer, jay kumar sharma projects, jay kumar sharma skills, jay kumar sharma expertise, jay kumar sharma wordpress developer, jay kumar sharma graphic designer, jay kumar sharma canva designer, jay kumar sharma excel expert, jay kumar sharma responsive design, jay kumar sharma ui/ux designer, jay kumar sharma api development, jay kumar sharma database design, jay kumar sharma cloud integration, jay kumar sharma custom website development, jay kumar sharma web application development, jay kumar sharma portfolio development, jay kumar sharma cms development, jay kumar sharma social media design, jay kumar sharma logo design, jay kumar sharma template design, jay kumar sharma card design, jay kumar sharma professional services, jay kumar sharma development company, jay kumar sharma tech solutions" />
         <meta name="author" content="Jay Kumar Sharma" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
@@ -478,30 +479,74 @@ const Portfolio = () => {
         {/* middle Section */}
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Profile Image - Always first on mobile, right on desktop */}
+            {/* Profile Image with 3D Card Effect - Always first on mobile, right on desktop */}
             <div className="w-full md:w-auto flex justify-center md:justify-end md:order-2">
-              <div className="relative mx-auto md:mx-0">
-                <img
-                  src="/Profile.png" 
-                  alt="Jay Sharma" 
-                  className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white"
-                />
-                <img
-                  src="https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000" 
-                  alt="React Icon"
-                  className="absolute top-4 left-0 md:left-[-20px] w-8 md:w-12 animate-bounce"
-                />
-                <img
-                  src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000" 
-                  alt="HTML Icon"
-                  className="absolute top-4 right-0 md:right-[-20px] w-8 md:w-12 animate-bounce"
-                />
-                <img
-                  src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000" 
-                  alt="Tailwind Icon"
-                  className="absolute bottom-[-10px] md:bottom-[-20px] left-1/2 transform -translate-x-1/2 w-8 md:w-12 animate-bounce"
-                />
-              </div>
+              <CardContainer className="py-0" containerClassName="py-0">
+                <CardBody className="h-auto w-auto">
+                  <CardItem
+                    translateX={0}
+                    translateY={0}
+                    translateZ={50}
+                    rotateX={0}
+                    rotateY={0}
+                    rotateZ={0}
+                    className="relative"
+                  >
+                    <div className="relative">
+                      <img
+                        src="/Profile.png" 
+                        alt="Jay Sharma" 
+                        className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white"
+                      />
+                      <CardItem
+                        translateX={-20}
+                        translateY={-10}
+                        translateZ={80}
+                        rotateX={0}
+                        rotateY={0}
+                        rotateZ={0}
+                        className="absolute top-4 left-0 md:left-[-20px]"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000" 
+                          alt="React Icon"
+                          className="w-8 md:w-12 animate-bounce"
+                        />
+                      </CardItem>
+                      <CardItem
+                        translateX={20}
+                        translateY={-10}
+                        translateZ={80}
+                        rotateX={0}
+                        rotateY={0}
+                        rotateZ={0}
+                        className="absolute top-4 right-0 md:right-[-20px]"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000" 
+                          alt="HTML Icon"
+                          className="w-8 md:w-12 animate-bounce"
+                        />
+                      </CardItem>
+                      <CardItem
+                        translateX={0}
+                        translateY={20}
+                        translateZ={80}
+                        rotateX={0}
+                        rotateY={0}
+                        rotateZ={0}
+                        className="absolute bottom-[-10px] md:bottom-[-20px] left-1/2 transform -translate-x-1/2"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000" 
+                          alt="Tailwind Icon"
+                          className="w-8 md:w-12 animate-bounce"
+                        />
+                      </CardItem>
+                    </div>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
             </div>
 
             {/* name Content - Always second on mobile, left on desktop */}
