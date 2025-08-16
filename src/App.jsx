@@ -134,6 +134,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/about.html" element={<About />} />
       </Routes>
     </ThemeProvider>
   )
