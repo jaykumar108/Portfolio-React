@@ -352,6 +352,10 @@ const Portfolio = () => {
     }
   };
 
+  const handleNavigateToTools = () => {
+    navigate('/tools');
+  };
+
   // Services data for hover effect
   const servicesData = [
     {
@@ -471,6 +475,7 @@ const Portfolio = () => {
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}
         onProjectClick={handleNavigateToProject}
+        onToolsClick={handleNavigateToTools}
         currentPage="home" 
       />
 
@@ -783,6 +788,7 @@ const Portfolio = () => {
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}
         onProjectClick={handleNavigateToProject}
+        onToolsClick={handleNavigateToTools}
       />
     </div>
   );

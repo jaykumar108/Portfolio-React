@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes, FaCode, FaHome, FaUser, FaCogs, FaFolder, FaEnvelope } from "react-icons/fa";
+import { FaBars, FaTimes, FaCode, FaHome, FaUser, FaCogs, FaFolder, FaEnvelope, FaTools } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
-const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, currentPage }) => {
+const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, onToolsClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -13,6 +13,7 @@ const ModernNavbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
     { id: 'about', label: 'About', icon: FaUser, onClick: onAboutClick },
     { id: 'service', label: 'Services', icon: FaCogs, onClick: onServiceClick },
     { id: 'project', label: 'Projects', icon: FaFolder, onClick: onProjectClick },
+    { id: 'tools', label: 'Tools', icon: FaTools, onClick: onToolsClick },
     { id: 'contact', label: 'Contact', icon: FaEnvelope, onClick: onContactClick },
   ];
 

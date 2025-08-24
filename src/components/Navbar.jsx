@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes, FaCode } from "react-icons/fa";
 import Button from "./Button";
 
-const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, currentPage }) => {
+const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, onToolsClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -66,6 +66,16 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
                 onClick={onProjectClick}
               >
                 Projects
+              </li>
+              <li 
+                className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
+                  currentPage === 'tools' 
+                    ? 'text-blue-500 font-medium border-b-2 border-blue-500' 
+                    : 'text-gray-700 hover:text-blue-500'
+                }`}
+                onClick={onToolsClick}
+              >
+                Tools
               </li>
               <li 
                 className={`cursor-pointer py-2 transition-all duration-300 ease-in-out ${
@@ -165,7 +175,20 @@ const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onP
               }}
             >
               Projects
-              </li>
+            </li>
+            <li 
+              className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
+                currentPage === 'tools' 
+                  ? 'text-blue-500 font-medium bg-blue-50 border-l-4 border-blue-500' 
+                  : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
+              }`}
+              onClick={() => {
+                setIsMenuOpen(false);
+                onToolsClick();
+              }}
+            >
+              Tools
+            </li>
             <li 
               className={`cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 ease-in-out ${
                 currentPage === 'contact' 
