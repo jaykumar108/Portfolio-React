@@ -11,6 +11,7 @@ import Loading from './components/ui/loading'
 import emailjs from 'emailjs-com'
 import { ThemeProvider } from './context/ThemeContext'
 
+
 function App() {
   const location = useLocation()
   const [isLoading, setIsLoading] = useState(true)
