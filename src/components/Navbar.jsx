@@ -1,12 +1,29 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes, FaCode } from "react-icons/fa";
 import Button from "./Button";
+import { Helmet } from "react-helmet";
 
 const Navbar = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, onToolsClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
+      <Helmet>
+        <title>Jay Kumar Sharma</title>
+        <meta name="title" content="Jay Kumar Sharma" />
+        <meta name="description" content="Jay Kumar Sharma" />
+        <meta name="keywords" content="jay kumar sharma, jay sharma, jay kumar sharma , jay kumar sharma navbar, jay kumar sharma jaysharma.space, jay kumar sharma jaysharma.space" />
+        <meta name="author" content="Jay Kumar Sharma" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="target" content="all" />
+        <link rel="canonical" href="https://jaysharma.space" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/profile.png" />
+      </Helmet>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white z-50 px-6 border-b border-gray-200">
         <div className="max-w-6xl mx-auto py-4">

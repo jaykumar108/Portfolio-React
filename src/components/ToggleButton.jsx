@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaHome, FaUser, FaCogs, FaEnvelope, FaFolder, FaTools } from 'react-icons/fa';
+import { Helmet } from "react-helmet";
 
 const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClick, onProjectClick, onToolsClick }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +64,23 @@ const ToggleButton = ({ onHomeClick, onAboutClick, onServiceClick, onContactClic
 
   return (
     <div className="fixed bottom-6 right-6 z-50 lg:hidden">
+      <Helmet>
+        <title>Jay Kumar Sharma | Profile & Portfolio </title>      
+        <meta name="title" content="Jay Kumar Sharma -| Profile & Portfolio" />
+        <meta name="description" content="Jay Kumar Sharma - jaysharma.space | Profile & Portfolio" />
+        <meta name="keywords" content="jay kumar sharma, jay sharma, jay sharma toggle button, jay kumar sharma toggle button, jay kumar sharma jaysharma.space, jay kumar sharma jaysharma.space" />
+        <meta name="author" content="Jay Kumar Sharma" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="Global" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="target" content="all" />
+        <meta name="subject" content="Jay Kumar Sharma - | Profile & Portfolio" />
+        <meta name="classification" content="Jay Kumar Sharma - | Profile & Portfolio" />
+        <meta name="category" content="Jay Kumar Sharma - | Profile & Portfolio" />
+      </Helmet>
       {/* Menu Items */}
       <AnimatePresence>
         {isOpen && (
