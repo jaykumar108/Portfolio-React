@@ -569,10 +569,10 @@ const Portfolio = () => {
               {/* Buttons Container */}
               <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
                 {/* View Resume Button */}
-                <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 w-full sm:w-auto">
+                <a href="https://resume.jaysharma.space" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 w-full sm:w-auto">
                   <FaEye className="text-white cursor-pointer" />
-                  <span>View Resume</span>
-                </button>
+                  <span>  View Resume</span>
+                </a>
 
                 {/* About Me Button */}
                 <Button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg" onClick={handleNavigateToAbout}>
