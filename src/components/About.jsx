@@ -281,7 +281,8 @@ const About = () => {
           "sameAs": [
             "https://github.com/jaykumar108/",
             "https://linkedin.com/in/jaykumar108/",
-            "https://twitter.com/jaysharma"
+            "https://x.com/Jay_kumar__",
+            "https://peerlist.io/jaykumar108"
           ]
         }
         `}

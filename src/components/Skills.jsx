@@ -58,7 +58,10 @@ const Skills = () => {
           "sameAs": [
             "https://jaysharma.space/",
             "https://github.com/jaykumar108",
-            "https://linkedin.com/in/jaykumar108"
+            "https://linkedin.com/in/jaykumar108",
+            "https://x.com/Jay_kumar__",
+            "https://peerlist.io/jaykumar108"
+
           ],
           "knowsAbout": [
             "React.js",

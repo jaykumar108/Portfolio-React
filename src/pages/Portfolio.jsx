@@ -436,7 +436,9 @@ const Portfolio = () => {
               "sameAs": [
                 "https://www.linkedin.com/in/jaykumar108/",
                 "https://github.com/jaykumar108/",
-                "https://instagram.com/jay_kumar_sharma_/"
+                "https://instagram.com/jay_kumar_sharma_/",
+                "https://x.com/Jay_kumar__",
+                "https://peerlist.io/jaykumar108"
 
               ],
               "knowsAbout": [
