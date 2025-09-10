@@ -56,7 +56,7 @@ function App() {
         <title>Jay Kumar Sharma - MERN Stack Developer | Portfolio</title>
         <meta name="title" content="Jay Kumar Sharma - Full Stack Developer | Portfolio" />
         <meta name="description" content="Professional portfolio of Jay Kumar Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies. View projects, skills, and contact information." />
-        <meta name="keywords" content="jay kumar sharma, jay sharma, jay sharma Developer, jay kumar sharma web developer, jay kumar sharma mern stack developer, jay kumar sharma full stack developer, jay kumar sharma portfolio, jay kumar sharma space, jay kumar sharma react developer, jay kumar sharma node.js developer, jay kumar sharma javascript developer, jay kumar sharma mongodb developer, jay kumar sharma express developer, jay kumar sharma frontend developer, jay kumar sharma backend developer, jay kumar sharma india, jay kumar sharma remote developer, jay kumar sharma freelance developer, jay kumar sharma projects, jay kumar sharma skills, jay kumar sharma expertise, jay kumar sharma professional developer, jay kumar sharma web development, jay kumar sharma software development, jay kumar sharma programming, jay kumar sharma coding, jay kumar sharma tech, jay kumar sharma technology, jay kumar sharma digital, jay kumar sharma online, jay kumar sharma website, jay kumar sharma application, jay kumar sharma software, jay kumar sharma solution, jay kumar sharma service, jay kumar sharma consulting" />
+        <meta name="keywords" content="jay kumar sharma, jay sharma, jay sharma Developer, jay kumar sharma web developer, jay kumar sharma mern stack developer, jay kumar sharma full stack developer, jay kumar sharma portfolio, jay kumar sharma space, jay kumar sharma react developer, jay kumar sharma node.js developer, jay kumar sharma javascript developer, jay kumar sharma mongodb developer, jay kumar sharma express developer, jay kumar sharma frontend developer, jay kumar sharma backend developer, jay kumar sharma india, jay kumar sharma remote developer, jay kumar sharma freelance developer, jay kumar sharma projects, jay kumar sharma skills, jay kumar sharma expertise, jay kumar sharma professional developer, jay kumar sharma web development, jay kumar sharma software development, jay kumar sharma programming, jay kumar sharma coding, jay kumar sharma tech, jay kumar sharma technology, jay kumar sharma digital, jay kumar sharma online, jay kumar sharma website, jay kumar sharma application, jay kumar sharma software, jay kumar sharma solution, jay kumar sharma service, jay kumar sharma consulting, jay kumar sharma peerlist, jay kumar sharma peerlist profile, jaykumar108 peerlist" />
         <meta name="subject" content="Portfolio Jay Kumar Sharma - Full Stack Developer" />
         <meta name="classification" content="Portfolio Jay Kumar Sharma" />
         <meta name="category" content="Jay Kumar Sharma Space Portfolio" />
@@ -106,7 +106,8 @@ function App() {
           "sameAs": [
             "https://github.com/jaykumar108/",
             "https://linkedin.com/in/jaykumar108/",
-            "https://twitter.com/your-twitter"
+            "https://x.com/Jay_kumar__",
+            "https://peerlist.io/jaykumar108"
           ],
           "knowsAbout": [
             "React.js",
