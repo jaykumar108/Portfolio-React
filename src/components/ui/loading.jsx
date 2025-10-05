@@ -1,88 +1,100 @@
 import React from 'react';
 
-const Loading = ({ size = 'large', progress = 99, isComplete = false }) => {
-  const sizeClasses = {
-    small: 'w-16 h-16',
-    default: 'w-20 h-20',
-    large: 'w-24 h-24'
-  };
-
-  if (isComplete) {
-    return (
-      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-green-500 to-green-600">
-        {/* Success Animation */}
-        <div className={`${sizeClasses[size]} relative`}>
-          <div className="w-full h-full bg-white rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-            <svg 
-              className="w-2/3 h-2/3 text-green-600" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={4} 
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-        </div>
-        <div className="mt-6 text-white text-xl font-semibold animate-fade-in">
-          Success!
-        </div>
-      </div>
-    );
-  }
-
+const Loading = ({ text = "Loading..." }) => {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Modern Loading Container */}
-      <div className="relative">
-        {/* Outer Ring */}
-        <div className={`${sizeClasses[size]} rounded-full border-4 border-slate-700/30 flex items-center justify-center`}>
-          {/* Inner Ring with Animation */}
-          <div className={`${sizeClasses[size]} rounded-full border-4 border-transparent border-t-blue-500 border-r-blue-400 animate-spin`} 
-               style={{ animationDuration: '1s' }}>
-          </div>
-          
-          {/* Progress Ring */}
-          <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-white animate-spin"
-               style={{ 
-                 animationDuration: '0.8s',
-                 animationDirection: 'reverse'
-               }}>
-          </div>
-          
-          {/* Center Content */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-white text-sm font-medium mb-1">
-                {progress}%
-              </div>
-              <div className="text-slate-400 text-xs">
-                Loading...
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Floating Dots */}
-        <div className="absolute -top-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
-        <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-      </div>
+    <div 
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#0f172a',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999,
+        color: 'white',
+        fontFamily: 'system-ui, -apple-system, sans-serif'
+      }}
+    >
+      {/* Simple Spinner */}
+      <div
+        style={{
+          width: '50px',
+          height: '50px',
+          border: '4px solid #374151',
+          borderTop: '4px solid #3b82f6',
+          borderRadius: '50%',
+          animation: 'spin 1s linear infinite',
+          marginBottom: '20px'
+        }}
+      />
       
       {/* Loading Text */}
-      <div className="mt-8 text-center">
-        <div className="text-white text-lg font-medium mb-2">
-          Please wait
-        </div>
-        <div className="flex space-x-1 justify-center">
-          <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
-          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-          <div className="w-2 h-2 bg-blue-300 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-        </div>
+      <div
+        style={{
+          fontSize: '18px',
+          fontWeight: '500',
+          marginBottom: '10px',
+          textAlign: 'center'
+        }}
+      >
+        {text}
       </div>
+      
+      {/* Dots Animation */}
+      <div style={{ display: 'flex', gap: '4px' }}>
+        <div
+          style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#3b82f6',
+            borderRadius: '50%',
+            animation: 'bounce 1.4s ease-in-out infinite both'
+          }}
+        />
+        <div
+          style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#3b82f6',
+            borderRadius: '50%',
+            animation: 'bounce 1.4s ease-in-out infinite both',
+            animationDelay: '0.16s'
+          }}
+        />
+        <div
+          style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#3b82f6',
+            borderRadius: '50%',
+            animation: 'bounce 1.4s ease-in-out infinite both',
+            animationDelay: '0.32s'
+          }}
+        />
+      </div>
+      
+      {/* CSS Animations */}
+      <style>
+        {`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          
+          @keyframes bounce {
+            0%, 80%, 100% {
+              transform: scale(0);
+            }
+            40% {
+              transform: scale(1);
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

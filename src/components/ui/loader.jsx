@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import React from "react";
 
 export const LoaderOne = () => {
-  const transition = (x) => {
+  const transition = () => {
     return {
       duration: 1,
       repeat: Infinity,
@@ -46,7 +46,7 @@ export const LoaderOne = () => {
 };
 
 export const LoaderTwo = () => {
-  const transition = (x) => {
+  const transition = () => {
     return {
       duration: 2,
       repeat: Infinity,
