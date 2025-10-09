@@ -64,7 +64,7 @@ const QuestionPaperGenerator = () => {
     setQuestions(questions.filter(q => q.id !== id));
     toast.success("Question deleted successfully!", {
       duration: 2000,
-      position: "top-right",
+      position: "top-center",
       style: {
         background: 'white',
         color: 'black',
