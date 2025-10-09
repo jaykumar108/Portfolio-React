@@ -11,6 +11,7 @@ const NotFound = () => {
   };
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white flex items-center justify-center">
       <Helmet>
         <title>404 - Page Not Found | Jay Kumar Sharma Portfolio</title>
