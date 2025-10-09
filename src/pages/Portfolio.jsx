@@ -38,7 +38,7 @@ const socialLinks = [
     name: "LinkedIn",
     icon: <FaLinkedin className="text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
-    link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
+    link: "https://www.linkedin.com/in/jaykumar108"
   },
   {
     id: 2,
@@ -70,7 +70,7 @@ const footerSocialLinks = [
     name: "LinkedIn",
     icon: <FaLinkedin className="text-2xl text-white hover:text-blue-400 cursor-pointer transition-colors" />,
     imageUrl: "", //  custom image URL
-    link: "https://www.linkedin.com/in/jay-kumar-sharma-96112b25a/"
+    link: "https://www.linkedin.com/in/jaykumar108"
   },
   {
     id: 2,
@@ -337,11 +337,7 @@ const Portfolio = () => {
   };
 
   const handleNavigateToContact = () => {
-    // Scroll to contact section on the same page
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate('/contact');
   };
 
   const handleNavigateToProject = () => {

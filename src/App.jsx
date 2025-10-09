@@ -5,6 +5,7 @@ import './App.css'
 import Portfolio from './pages/Portfolio'
 import About from './components/About'
 import Service from './components/Service'
+import Contact from './pages/Contact'
 import NotFound from './components/NotFound'
 import QuestionPaperDemo from './pages/QuestionPaperDemo'
 import Loading from './components/ui/loading'
@@ -137,6 +138,7 @@ function App() {
         <Route path="/" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/question-paper" element={<QuestionPaperDemo />} />
         <Route path="/tools" element={<QuestionPaperDemo />} />
         <Route path="*" element={<NotFound />} />

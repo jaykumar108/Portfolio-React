@@ -26,14 +26,7 @@ const About = () => {
   };
 
   const handleNavigateToContact = () => {
-    navigate('/');
-    // We need to wait for the component to render before scrolling
-    setTimeout(() => {
-      const contactSection = document.getElementById('contact-section');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    navigate('/contact');
   };
 
   const handleNavigateToProject = () => {
