@@ -237,16 +237,16 @@ const DocumentDownloader = ({ questions, paperTitle }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6">
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+      <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
         Download Options
       </h3>
       
       <div className="space-y-4">
         {/* DOCX Download */}
-        <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <h4 className="font-medium text-blue-800 mb-2">Download as DOCX</h4>
-          <p className="text-sm text-blue-700 mb-3">
+        <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+          <h4 className="font-medium text-blue-800 dark:text-blue-300 mb-2">Download as DOCX</h4>
+          <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
             Download your question paper as a Microsoft Word document
           </p>
           <DesignedButton
@@ -262,9 +262,9 @@ const DocumentDownloader = ({ questions, paperTitle }) => {
         </div>
 
         {/* PDF Download */}
-        <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-          <h4 className="font-medium text-green-800 mb-2">Download as PDF</h4>
-          <p className="text-sm text-green-700 mb-3">
+        <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-700">
+          <h4 className="font-medium text-green-800 dark:text-green-300 mb-2">Download as PDF</h4>
+          <p className="text-sm text-green-700 dark:text-green-300 mb-3">
             Download your question paper as a PDF document
           </p>
           <DesignedButton
@@ -280,9 +280,9 @@ const DocumentDownloader = ({ questions, paperTitle }) => {
         </div>
 
         {/* Info */}
-        <div className="p-4 bg-gray-50 rounded-lg">
-          <h4 className="font-medium text-gray-800 mb-2">Download Information</h4>
-          <div className="text-sm text-gray-600 space-y-1">
+        <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <h4 className="font-medium text-gray-800 dark:text-gray-200 mb-2">Download Information</h4>
+          <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
             <p>• DOCX: Editable Microsoft Word format</p>
             <p>• PDF: Fixed format, perfect for printing</p>
             <p>• Both formats maintain question formatting</p>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import { Toaster } from 'react-hot-toast'
 import './App.css'
 import Portfolio from './pages/Portfolio'
 import About from './components/About'
@@ -144,6 +145,25 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/about.html" element={<About />} />
       </Routes>
+      
+      {/* Toast Notifications */}
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: 'var(--toast-bg,rgb(255, 255, 255))',
+            color: 'black',
+          },
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: '#10B981',
+              secondary: 'black',
+            },
+          },
+        }}
+      />
     </ThemeProvider>
   )
 }

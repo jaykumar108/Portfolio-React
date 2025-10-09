@@ -32,7 +32,7 @@ const QuestionPaperDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Helmet>
         <title>Jay Kumar Sharma - Tools | Question Paper Generator</title>    
         <meta name="title" content="Jay Kumar Sharma - Tools | Question Paper Generator" />
