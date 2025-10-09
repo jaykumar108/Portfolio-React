@@ -7,6 +7,7 @@ import Button from './Button';
 import ModernNavbar from './ModernNavbar';
 import ToggleButton from './ToggleButton';
 import { CardSwipe } from './ui/card-swipe';
+import GithubStats from './gitHubStats';
 
 const About = () => {
   const navigate = useNavigate();
@@ -385,6 +386,9 @@ const About = () => {
         </div>
       </section>
 
+   {/* GitHub Stats Section */}
+        <GithubStats />
+
       {/* Personal Info Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
@@ -715,6 +719,8 @@ const About = () => {
         </div>
 
       </section>
+
+   
 
       {/* Toggle Button */}
       <ToggleButton 
