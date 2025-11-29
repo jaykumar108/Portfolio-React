@@ -408,7 +408,7 @@ const ContactForm = () => {
           </div>
           
           <div className="md:col-span-2">
-            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Message*</label>
+            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Message <span className="text-red-500">*</span></label>
             <textarea
               id="portfolio-message"
               name="message"

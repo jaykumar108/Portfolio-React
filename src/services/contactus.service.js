@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 const CONTACT_API_ENDPOINT = `${API_BASE_URL}/api/portfolio-contact/send`;
 
 export const sendContactForm = async (formData) => {
