@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
-import { FaVoicemail, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
-import emailjs from 'emailjs-com';
+import { FaVoicemail, FaLinkedin, FaGithub, FaInstagram, FaUpload, FaTimes } from 'react-icons/fa';
+import toast from 'react-hot-toast';
+import { sendContactForm } from '../services/contactus.service';
 import Button from '../components/Button';
 import ModernNavbar from '../components/ModernNavbar';
 import ToggleButton from '../components/ToggleButton';
@@ -47,88 +48,169 @@ const SocialLink = ({ item }) => {
 // Contact Form Component
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    user_name: "",
-    user_email: "",
+    name: "",
+    email: "",
     phone: "",
-    message: ""
+    message: "",
+    file: null
   });
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [fileName, setFileName] = useState("");
 
   const validateForm = () => {
     const errors = {};
-    if (!formData.user_name || !formData.user_name.trim()) {
-      errors.user_name = "Name is required";
+    if (!formData.name || !formData.name.trim()) {
+      errors.name = "Name is required";
     }
-    if (!formData.user_email || !formData.user_email.trim()) {
-      errors.user_email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.user_email)) {
-      errors.user_email = "Email is invalid";
+    if (!formData.email || !formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email is invalid";
     }
     if (!formData.message || !formData.message.trim()) {
       errors.message = "Message is required";
+    } else if (formData.message.length > 600) {
+      errors.message = "Message must be maximum 600 characters";
     }
+    
+    // Validate phone number (max 10 digits)
+    if (formData.phone && formData.phone.trim()) {
+      const phoneDigits = formData.phone.replace(/\D/g, ''); // Remove non-digits
+      if (phoneDigits.length > 10) {
+        errors.phone = "Phone number must be maximum 10 digits";
+      }
+    }
+    
+    // Validate file if uploaded
+    if (formData.file) {
+      const maxSize = 5 * 1024 * 1024; // 5MB
+      if (formData.file.size > maxSize) {
+        errors.file = "File size must be less than 5MB";
+      }
+    }
+    
     return errors;
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    const { name, value, files } = e.target;
+    
+    if (name === 'file' && files && files.length > 0) {
+      const file = files[0];
+      setFormData({
+        ...formData,
+        file: file
+      });
+      setFileName(file.name);
+    } else if (name === 'phone') {
+      // Limit phone number to 10 digits (remove non-digits and limit length)
+      const phoneDigits = value.replace(/\D/g, '').slice(0, 10);
+      setFormData({
+        ...formData,
+        [name]: phoneDigits
+      });
+    } else if (name === 'name') {
+      // Only allow letters, spaces, and common name characters (no numbers)
+      const nameOnly = value.replace(/[^a-zA-Z\s.'-]/g, '');
+      setFormData({
+        ...formData,
+        [name]: nameOnly
+      });
+    } else if (name === 'message') {
+      // Limit message to 600 characters
+      const limitedMessage = value.slice(0, 600);
+      setFormData({
+        ...formData,
+        [name]: limitedMessage
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleRemoveFile = () => {
+    setFormData({
+      ...formData,
+      file: null
+    });
+    setFileName("");
+    // Reset file input
+    const fileInput = document.getElementById('file');
+    if (fileInput) {
+      fileInput.value = '';
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm();
     setFormErrors(errors);
     setErrorMessage("");
 
     if (Object.keys(errors).length === 0) {
-      // Form is valid, submit the data using EmailJS
       setIsLoading(true);
+      setErrorMessage("");
 
-      // Use EmailJS to send the email
-      emailjs.send(
-        'service_68z5qmg', // Service ID
-        'template_wej4gp9', // Template ID
-        {
-          user_name: formData.user_name,
-          user_email: formData.user_email,
-          phone: formData.phone,
-          message: formData.message,
-          time: new Date().toLocaleString() // Adding current time
-        }
-      )
-        .then((response) => {
-          console.log('Email sent successfully!', response);
-          setIsSubmitted(true);
-          setShowThankYou(true);
-          
-          // Reset form data
-          setFormData({
-            user_name: "",
-            user_email: "",
-            phone: "",
-            message: ""
-          });
-
-          // Hide thank you message after 5 seconds
-          setTimeout(() => {
-            setShowThankYou(false);
-          }, 5000);
-        })
-        .catch((error) => {
-          console.error('Failed to send email:', error);
-          setErrorMessage("Failed to send email. Please try again later.");
-        })
-        .finally(() => {
-          setIsLoading(false);
+      try {
+        // Send contact form data to API
+        await sendContactForm(formData);
+        
+        // Show success toast
+        toast.success('Thank you for contacting! I will get back to you shortly.', {
+          duration: 5000,
+          position: 'top-center',
+          style: {
+            background: '#10b981',
+            color: '#fff',
+            padding: '16px',
+            borderRadius: '8px',
+            fontSize: '16px',
+          },
         });
+        
+        // Show thank you message
+        setShowThankYou(true);
+        
+        // Reset form data
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          file: null
+        });
+        setFileName("");
+
+        // Hide thank you message after 5 seconds
+        setTimeout(() => {
+          setShowThankYou(false);
+        }, 5000);
+      } catch (error) {
+        console.error('Failed to send contact form:', error);
+        const errorMsg = error.message || "Failed to send message. Please try again later.";
+        setErrorMessage(errorMsg);
+        
+        // Show error toast
+        toast.error(errorMsg, {
+          duration: 5000,
+          position: 'top-center',
+          style: {
+            background: '#ef4444',
+            color: '#fff',
+            padding: '16px',
+            borderRadius: '8px',
+            fontSize: '16px',
+          },
+        });
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -151,33 +233,33 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="user_name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Name*</label>
+            <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Name <span className="text-red-500">*</span></label>
             <input
               type="text"
-              id="user_name"
-              name="user_name"
-              value={formData.user_name}
+              id="name"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.user_name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
-              placeholder="Enter Your Name"
+              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+              placeholder="Your Name Here..."
               disabled={isLoading}
             />
-            {formErrors.user_name && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.user_name}</p>}
+            {formErrors.name && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.name}</p>}
           </div>
           
           <div>
-            <label htmlFor="user_email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Email*</label>
+            <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Email <span className="text-red-500">*</span></label>
             <input
               type="email"
-              id="user_email"
-              name="user_email"
-              value={formData.user_email}
+              id="email"
+              name="email"
+              value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.user_email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
-              placeholder="Enter Your Email"
+              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
+              placeholder="Your Email Here..."
               disabled={isLoading}
             />
-            {formErrors.user_email && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.user_email}</p>}
+            {formErrors.email && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.email}</p>}
           </div>
           
           <div>
@@ -187,26 +269,73 @@ const ContactForm = () => {
               id="phone"
               name="phone"
               value={formData.phone}
+              
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="+91 1234567890"
+              placeholder="9876543210"
               disabled={isLoading}
             />
           </div>
           
+          <div>
+            <label htmlFor="file" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Upload File <span className="text-gray-500 dark:text-gray-400 text-xs ml-2"> (Optional) </span></label>
+            <div className="relative">
+              <input
+                type="file"
+                id="file"
+                name="file"
+                onChange={handleChange}
+                className="hidden"
+                disabled={isLoading}
+              />
+              <label
+                htmlFor="file"
+                className={`flex items-center justify-center w-full px-4 py-3 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${
+                  formErrors.file 
+                    ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
+                    : 'border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 bg-gray-50 dark:bg-gray-700/50'
+                } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <FaUpload className="mr-2 text-gray-500 dark:text-gray-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-300">
+                  {fileName || "Choose file or drag here"}
+                </span>
+              </label>
+            </div>
+            {fileName && (
+              <div className="mt-2 flex items-center justify-between bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded">
+                <span className="text-sm text-gray-700 dark:text-gray-300 truncate">{fileName}</span>
+                <button
+                  type="button"
+                  onClick={handleRemoveFile}
+                  className="ml-2 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+                  disabled={isLoading}
+                >
+                  <FaTimes />
+                </button>
+              </div>
+            )}
+            {formErrors.file && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.file}</p>}
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Max file size: 5MB</p>
+          </div>
+          
           <div className="md:col-span-2">
-            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message*</label>
+            <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message <span className="text-red-500">*</span></label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows="5"
+              maxLength={600}
               className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white ${formErrors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'}`}
               placeholder="Your message here..."
               disabled={isLoading}
             ></textarea>
             {formErrors.message && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.message}</p>}
+            <p className={`text-xs mt-1 ${formData.message.length > 550 ? 'text-orange-500 dark:text-orange-400' : 'text-gray-500 dark:text-gray-400'}`}>
+              {formData.message.length >= 600 ? 'Maximum character limit reached' : `${600 - formData.message.length} characters remaining`}
+            </p>
           </div>
         </div>
         
@@ -236,11 +365,6 @@ const ContactForm = () => {
 
 const Contact = () => {
   const navigate = useNavigate();
-
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init("lrivzXbMVzdaxpZ91"); // Public key provided by the user
-  }, []);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -378,7 +502,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Response Time</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Usually within 24 hours</p>
+                    <p className="text-gray-600 dark:text-gray-300">Usually within 1-5 hours</p>
                   </div>
                 </div>
               </div>
