@@ -75,7 +75,7 @@ const QuestionStorage = ({ questions, paperTitle, onLoadQuestions, onClearAll })
         </div>
 
         {/* Import Section */}
-        <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+        {/* <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
           <h4 className="font-medium text-blue-800 dark:text-blue-300 mb-2">Import Questions</h4>
           <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
             Import questions from a previously exported JSON file
@@ -97,7 +97,7 @@ const QuestionStorage = ({ questions, paperTitle, onLoadQuestions, onClearAll })
               Import from JSON
             </DesignedButton>
           </label>
-        </div>
+        </div> */}
 
         {/* Clear Data Section */}
         <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-700">
@@ -117,14 +117,14 @@ const QuestionStorage = ({ questions, paperTitle, onLoadQuestions, onClearAll })
         </div>
 
         {/* Storage Info */}
-        <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        {/* <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
           <h4 className="font-medium text-gray-800 dark:text-gray-200 mb-2">Storage Information</h4>
           <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
             <p>Questions saved: {questions.length}</p>
             <p>Paper title: {paperTitle}</p>
             <p>Data automatically saves to browser storage</p>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
   );

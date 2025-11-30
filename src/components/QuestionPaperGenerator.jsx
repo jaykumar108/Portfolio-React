@@ -6,6 +6,12 @@ import QuestionPaper from "./QuestionPaper";
 import QuestionStorage from "./QuestionStorage";
 import DocumentDownloader from "./DocumentDownloader";
 import { Plus, Save, Printer, Trash2, FileText } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "./ui/dialog";
 
 const QuestionPaperGenerator = () => {
   const [questions, setQuestions] = useState([]);
@@ -183,13 +189,13 @@ const QuestionPaperGenerator = () => {
               </h2>
                              <div className="flex gap-2">
                  <DesignedButton
-                   onClick={() => setShowPreview(!showPreview)}
+                   onClick={() => setShowPreview(true)}
                    variant="primary"
                    size="sm"
                    className="flex items-center gap-2"
                  >
                    <FileText className="w-4 h-4" />
-                   {showPreview ? "Hide Preview" : "Preview"}
+                   Preview
                  </DesignedButton>
                </div>
             </div>
@@ -256,16 +262,21 @@ const QuestionPaperGenerator = () => {
           </div>
         </div>
 
-        {/* Print Preview */}
-        {showPreview && (
-          <div className="mt-8">
-            <QuestionPaper
-              title={paperTitle}
-              questions={questions}
-              isPreview={true}
-            />
-          </div>
-        )}
+        {/* Preview Dialog */}
+        <Dialog open={showPreview} onOpenChange={setShowPreview}>
+          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>{paperTitle}</DialogTitle>
+            </DialogHeader>
+            <div className="mt-4">
+              <QuestionPaper
+                title={paperTitle}
+                questions={questions}
+                isPreview={true}
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

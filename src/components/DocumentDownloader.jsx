@@ -262,7 +262,7 @@ const DocumentDownloader = ({ questions, paperTitle }) => {
         </div>
 
         {/* PDF Download */}
-        <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-700">
+        {/* <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-700">
           <h4 className="font-medium text-green-800 dark:text-green-300 mb-2">Download as PDF</h4>
           <p className="text-sm text-green-700 dark:text-green-300 mb-3">
             Download your question paper as a PDF document
@@ -277,7 +277,7 @@ const DocumentDownloader = ({ questions, paperTitle }) => {
                          <FileDown className="w-4 h-4" />
              Download PDF
           </DesignedButton>
-        </div>
+        </div> */}
 
         {/* Info */}
         <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
