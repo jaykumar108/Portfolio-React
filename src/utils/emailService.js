@@ -96,6 +96,8 @@ export const sendEmail = async (emailData) => {
  * @param {string} formData.user_email - User's email
  * @param {string} [formData.phone] - User's phone number (optional)
  * @param {string} formData.message - User's message
+ * @param {string} [formData.fileurl] - File URL (optional, can be null)
+ * @param {string} [formData.fileUrl] - File URL alternative name (optional, can be null)
  * @param {string} recipientEmail - Email address to receive the contact form submission
  * @param {string} [senderEmail] - Sender email (must be verified in Brevo, defaults to recipientEmail)
  * 
@@ -106,11 +108,30 @@ export const sendContactFormEmail = async (formData, recipientEmail, senderEmail
     user_name,
     user_email,
     phone,
-    message
+    message,
+    fileurl,
+    fileUrl
   } = formData;
 
   // Use configured sender email, or fallback to recipient email (must be verified in Brevo)
   const fromEmail = senderEmail || SENDER_EMAIL || recipientEmail;
+
+  // Get file URL if available (handle both fileurl and fileUrl, and null values)
+  const fileUrlValue = fileurl || fileUrl || null;
+
+  // Format date in IST timezone
+  const formatISTDate = () => {
+    return new Date().toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+  };
 
   // Create HTML content for the email
   const htmlContent = `
@@ -186,9 +207,17 @@ export const sendContactFormEmail = async (formData, recipientEmail, senderEmail
             <span class="label">Message:</span>
             <div class="value">${message.replace(/\n/g, '<br>')}</div>
           </div>
+          ${fileUrlValue ? `
+          <div class="field">
+            <span class="label">Attached File:</span>
+            <div class="value">
+              <a href="${fileUrlValue}" target="_blank" style="color: #3b82f6; text-decoration: none;">View File</a>
+            </div>
+          </div>
+          ` : ''}
           <div class="field">
             <span class="label">Submitted At:</span>
-            <div class="value">${new Date().toLocaleString()}</div>
+            <div class="value">${formatISTDate()}</div>
           </div>
         </div>
         <div class="footer">
@@ -207,8 +236,9 @@ Email: ${user_email}
 ${phone ? `Phone: ${phone}\n` : ''}
 Message:
 ${message}
+${fileUrlValue ? `\nAttached File: ${fileUrlValue}` : ''}
 
-Submitted At: ${new Date().toLocaleString()}
+Submitted At: ${formatISTDate()}
   `;
 
   return await sendEmail({
