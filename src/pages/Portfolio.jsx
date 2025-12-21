@@ -627,58 +627,11 @@ const Portfolio = () => {
                     rotateZ={0}
                     className="relative"
                   >
-                    <div className="relative">
-                      <img
-                        src="/profile1.png"
-                        alt="Jay Sharma"
-                        className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white"
-                      />
-                      <CardItem
-                        translateX={-20}
-                        translateY={-10}
-                        translateZ={80}
-                        rotateX={0}
-                        rotateY={0}
-                        rotateZ={0}
-                        className="absolute top-4 left-0 md:left-[-20px]"
-                      >
-                        <img
-                          src="https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000"
-                          alt="React Icon"
-                          className="w-8 md:w-12 animate-bounce"
-                        />
-                      </CardItem>
-                      <CardItem
-                        translateX={20}
-                        translateY={-10}
-                        translateZ={80}
-                        rotateX={0}
-                        rotateY={0}
-                        rotateZ={0}
-                        className="absolute top-4 right-0 md:right-[-20px]"
-                      >
-                        <img
-                          src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000"
-                          alt="HTML Icon"
-                          className="w-8 md:w-12 animate-bounce"
-                        />
-                      </CardItem>
-                      <CardItem
-                        translateX={0}
-                        translateY={20}
-                        translateZ={80}
-                        rotateX={0}
-                        rotateY={0}
-                        rotateZ={0}
-                        className="absolute bottom-[-10px] md:bottom-[-20px] left-1/2 transform -translate-x-1/2"
-                      >
-                        <img
-                          src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000"
-                          alt="Tailwind Icon"
-                          className="w-8 md:w-12 animate-bounce"
-                        />
-                      </CardItem>
-                    </div>
+                    <img
+                      src="/profile1.png"
+                      alt="Jay Sharma"
+                      className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-1 border-white"
+                    />
                   </CardItem>
                 </CardBody>
               </CardContainer>
