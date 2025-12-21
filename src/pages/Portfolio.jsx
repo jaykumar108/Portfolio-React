@@ -102,9 +102,9 @@ const SocialLink = ({ item }) => {
   return (
     <a href={item.link} target="_blank" rel="noopener noreferrer" title={item.name}>
       {item.imageUrl ? (
-        <img 
-          src={item.imageUrl} 
-          alt={item.name} 
+        <img
+          src={item.imageUrl}
+          alt={item.name}
           className="w-6 h-6 text-gray-600 hover:text-blue-500 cursor-pointer transition-colors"
         />
       ) : (
@@ -119,9 +119,9 @@ const FooterSocialLink = ({ item }) => {
   return (
     <a href={item.link} target="_blank" rel="noopener noreferrer" title={item.name}>
       {item.imageUrl ? (
-        <img 
-          src={item.imageUrl} 
-          alt={item.name} 
+        <img
+          src={item.imageUrl}
+          alt={item.name}
           className="w-6 h-6 filter brightness-0 invert hover:brightness-125 cursor-pointer transition-all"
         />
       ) : (
@@ -161,7 +161,7 @@ const ContactForm = () => {
     } else if (formData.message.length > 600) {
       errors.message = "Message must be maximum 600 characters";
     }
-    
+
     // Validate phone number (max 10 digits)
     if (formData.phone && formData.phone.trim()) {
       const phoneDigits = formData.phone.replace(/\D/g, ''); // Remove non-digits
@@ -169,7 +169,7 @@ const ContactForm = () => {
         errors.phone = "Phone number must be maximum 10 digits";
       }
     }
-    
+
     // Validate file if uploaded
     if (formData.file) {
       const maxSize = 5 * 1024 * 1024; // 5MB
@@ -177,13 +177,13 @@ const ContactForm = () => {
         errors.file = "File size must be less than 5MB";
       }
     }
-    
+
     return errors;
   };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    
+
     if (name === 'file' && files && files.length > 0) {
       const file = files[0];
       setFormData({
@@ -246,7 +246,7 @@ const ContactForm = () => {
       try {
         // Send contact form data to API
         await sendContactForm(formData);
-        
+
         // Show success toast
         toast.success('Thank you for contacting! I will get back to you shortly.', {
           duration: 5000,
@@ -259,10 +259,10 @@ const ContactForm = () => {
             fontSize: '16px',
           },
         });
-        
+
         // Show thank you message
         setShowThankYou(true);
-        
+
         // Reset form data
         setFormData({
           name: "",
@@ -281,7 +281,7 @@ const ContactForm = () => {
         console.error('Failed to send contact form:', error);
         const errorMsg = error.message || "Failed to send message. Please try again later.";
         setErrorMessage(errorMsg);
-        
+
         // Show error toast
         toast.error(errorMsg, {
           duration: 5000,
@@ -332,7 +332,7 @@ const ContactForm = () => {
             />
             {formErrors.name && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.name}</p>}
           </div>
-          
+
           <div>
             <label htmlFor="portfolio-email" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Your Email <span className="text-red-500">*</span></label>
             <input
@@ -347,7 +347,7 @@ const ContactForm = () => {
             />
             {formErrors.email && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.email}</p>}
           </div>
-          
+
           <div>
             <label htmlFor="portfolio-phone" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Phone Number</label>
             <input
@@ -362,7 +362,7 @@ const ContactForm = () => {
             />
             {formErrors.phone && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.phone}</p>}
           </div>
-          
+
           <div>
             <label htmlFor="portfolio-file" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
               Upload File <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">(Optional)</span>
@@ -378,11 +378,10 @@ const ContactForm = () => {
               />
               <label
                 htmlFor="portfolio-file"
-                className={`flex items-center justify-center w-full px-3 py-2 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${
-                  formErrors.file 
-                    ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                    : 'border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 bg-gray-50 dark:bg-gray-700/50'
-                } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`flex items-center justify-center w-full px-3 py-2 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${formErrors.file
+                  ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                  : 'border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 bg-gray-50 dark:bg-gray-700/50'
+                  } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <FaUpload className="mr-2 text-gray-500 dark:text-gray-400 text-sm" />
                 <span className="text-sm text-gray-600 dark:text-gray-300">
@@ -406,8 +405,8 @@ const ContactForm = () => {
             {formErrors.file && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.file}</p>}
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Max file size: 5MB</p>
           </div>
-          
-          
+
+
           <div className="md:col-span-2">
             <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">Message <span className="text-red-500">*</span></label>
             <textarea
@@ -427,10 +426,10 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="mt-4 text-center">
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-2 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
             disabled={isLoading}
           >
@@ -493,7 +492,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
-      title: "WordPress Development", 
+      title: "WordPress Development",
       description: "We specialize in custom WordPress development, creating powerful, scalable, and easy-to-manage websites with custom themes and plugins.",
       link: "#"
     },
@@ -517,7 +516,7 @@ const Portfolio = () => {
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/" />
@@ -526,7 +525,7 @@ const Portfolio = () => {
         <meta property="og:image" content="/Profile.png" />
         <meta property="og:site_name" content="Jay Kumar Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/" />
@@ -534,22 +533,22 @@ const Portfolio = () => {
         <meta property="twitter:description" content="Jay Kumar Sharma is a passionate Web Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and services." />
         <meta property="twitter:image" content="/Profile.png" />
         <meta name="twitter:creator" content="@jay_kumar_sharma_" />
-        
+
         {/* Additional SEO Meta Tags */}
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Jay Kumar Sharma" />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href="https://jaysharma.space/" />
-        
+
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        
+
         {/* Structured Data / JSON-LD */}
         <script type="application/ld+json">
           {`
@@ -597,17 +596,17 @@ const Portfolio = () => {
           `}
         </script>
       </Helmet>
-      
+
       <style dangerouslySetInnerHTML={{ __html: typingStyles }} />
       {/* Navbar */}
-      <ModernNavbar 
-        onHomeClick={() => navigate('/')} 
+      <ModernNavbar
+        onHomeClick={() => navigate('/')}
         onAboutClick={handleNavigateToAbout}
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}
         onProjectClick={handleNavigateToProject}
         onToolsClick={handleNavigateToTools}
-        currentPage="home" 
+        currentPage="home"
       />
 
       {/* Main Content - Add top padding to account for fixed navbar */}
@@ -630,8 +629,8 @@ const Portfolio = () => {
                   >
                     <div className="relative">
                       <img
-                        src="/Profile.png" 
-                        alt="Jay Sharma" 
+                        src="/profile1.png"
+                        alt="Jay Sharma"
                         className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white"
                       />
                       <CardItem
@@ -644,7 +643,7 @@ const Portfolio = () => {
                         className="absolute top-4 left-0 md:left-[-20px]"
                       >
                         <img
-                          src="https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000" 
+                          src="https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000"
                           alt="React Icon"
                           className="w-8 md:w-12 animate-bounce"
                         />
@@ -659,7 +658,7 @@ const Portfolio = () => {
                         className="absolute top-4 right-0 md:right-[-20px]"
                       >
                         <img
-                          src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000" 
+                          src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000"
                           alt="HTML Icon"
                           className="w-8 md:w-12 animate-bounce"
                         />
@@ -674,7 +673,7 @@ const Portfolio = () => {
                         className="absolute bottom-[-10px] md:bottom-[-20px] left-1/2 transform -translate-x-1/2"
                       >
                         <img
-                          src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000" 
+                          src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000"
                           alt="Tailwind Icon"
                           className="w-8 md:w-12 animate-bounce"
                         />
@@ -694,9 +693,9 @@ const Portfolio = () => {
                 <span className="text-teal-600 dark:text-teal-400 font-semibold"> </span>
               </p>
               <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-xl md:max-w-none text-center md:text-left">
-              I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
+                I am a passionate Web Developer with a keen eye for creating user-friendly, responsive, and visually appealing websites.
               </p>
-              
+
               {/* Buttons Container */}
               <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
                 {/* View Resume Button */}
@@ -725,15 +724,35 @@ const Portfolio = () => {
       {/* About Section */}
       <section className="py-16 bg-gray-50 mt-6 dark:bg-gray-800">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Introduce About Myself</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            Hello! I am Jay Kumar Sharma, a dedicated Web Developer with a passion for building interactive and user-friendly websites. I enjoy crafting digital experiences that are both visually appealing and highly functional. My focus is on creating seamless, efficient, and engaging web solutions that enhance user experience.
-               </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            I am always eager to learn, grow, and take on new challenges in the ever-evolving world of web development. With a problem-solving mindset and a creative approach.
-                </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto"></div>
+          </div>
+
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            {/* Text Content - Left Side */}
+            <div className="flex-1">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-lg">
+                Hello! I am Jay Kumar Sharma, a dedicated Web Developer with a passion for building interactive and user-friendly websites. My focus is on creating seamless, efficient, and engaging web solutions that enhance user experience.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                I am always eager to learn, grow, and take on new challenges in the ever-evolving world of web development. With a problem-solving mindset and a creative approach.
+              </p>
+            </div>
+
+            {/* Video - Right Side */}
+            <div className="flex-1">
+              <div className="rounded-lg overflow-hidden shadow-xl">
+                <video
+                  className="w-full max-w-md h-auto max-h-80 mx-auto rounded-3xl"
+                  controls
+                  poster="/cover.png"
+                >
+                  <source src="/fullstackvideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -749,11 +768,11 @@ const Portfolio = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Offering cutting-edge web development services to help your business thrive in the digital landscape.</p>
           </div>
-          
+
           <HoverEffect items={servicesData} className="max-w-5xl mx-auto" />
 
           <div className="text-center mt-12">
-            <Button 
+            <Button
               className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
               onClick={handleNavigateToServices}
             >
@@ -774,7 +793,7 @@ const Portfolio = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Feel free to reach out for collaborations, questions, or just to say hello!</p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto mb-20">
             <ContactForm />
           </div>
@@ -788,23 +807,23 @@ const Portfolio = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-blue-400">Jay Kumar Sharma</h3>
               <div className="flex items-center space-x-3">
-                <img src="https://img.icons8.com/?size=100&id=JeO1Kv9jsmLr&format=png&color=000000" alt="Mail Icon" className="w-6 h-6 md:w-8 md:h-8"/>
+                <img src="https://img.icons8.com/?size=100&id=JeO1Kv9jsmLr&format=png&color=000000" alt="Mail Icon" className="w-6 h-6 md:w-8 md:h-8" />
                 <p className="text-gray-600 font-semibold text-white">jaykumarsh2003@gmail.com</p>
               </div>
 
               <div className="flex space-x-4 text-white">
-                {footerSocialLinks.map((item) => (  
+                {footerSocialLinks.map((item) => (
                   <FooterSocialLink key={item.id} item={item} />
                 ))}
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold text-lg mb-4">Services</h4>
               <ul className="space-y-2 text-gray-600">
                 <li className="hover:text-blue-400 cursor-pointer text-white">Graphic Design , WordPress </li>
                 <li className="hover:text-blue-400 cursor-pointer text-white">Web Development</li>
-   
+
               </ul>
             </div>
 
@@ -823,7 +842,7 @@ const Portfolio = () => {
               <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
               <ul className="space-y-2 text-gray-600 text-white">
                 <li>Darbhanga, Bihar india</li>
-               
+
                 <li>+91     </li>
               </ul>
             </div>
@@ -836,8 +855,8 @@ const Portfolio = () => {
       </footer>
 
       {/* Toggle Button */}
-      <ToggleButton 
-        onHomeClick={() => navigate('/')} 
+      <ToggleButton
+        onHomeClick={() => navigate('/')}
         onAboutClick={handleNavigateToAbout}
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}

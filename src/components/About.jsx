@@ -80,50 +80,50 @@ const About = () => {
       company: "PHN Technology Pvt. Ltd.",
       year: "June 2023 - August 2023",
       description: "Working on developing responsive web applications using HTML, CSS, and JavaScript technologies."
-      
+
     }
   ];
 
   // Skills data
   const skills = [
-    { 
-      category: 'Frontend', 
+    {
+      category: 'Frontend',
       items: [
         { name: 'React', icon: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000' },
         { name: 'Next.js', icon: 'https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png&color=000000' },
         { name: 'TypeScript', icon: 'https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000' },
         { name: 'Tailwind CSS', icon: 'https://img.icons8.com/?size=100&id=x7XMNGh2vdqA&format=png&color=000000' },
         // { name: 'Framer Motion', icon: 'https://img.icons8.com/?size=100&id=GRzLkhOFEp0z&format=png&color=000000' }
-      ] 
+      ]
     },
-    { 
-      category: 'Backend', 
+    {
+      category: 'Backend',
       items: [
         { name: 'Node.js', icon: 'https://img.icons8.com/?size=100&id=54087&format=png&color=000000' },
         { name: 'Express.js', icon: 'https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000' },
         { name: 'Python', icon: 'https://img.icons8.com/?size=100&id=13441&format=png&color=000000' },
         { name: 'MongoDB', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
         // { name: 'PostgreSQL', icon: 'https://img.icons8.com/?size=100&id=LwQEs9KnDgIo&format=png&color=000000' }
-      ] 
+      ]
     },
-    { 
-      category: 'Mobile', 
+    {
+      category: 'Mobile',
       items: [
         { name: 'React Native', icon: 'https://img.icons8.com/?size=100&id=35989&format=png&color=000000' },
         // { name: 'Flutter', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
         // { name: 'iOS', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
         { name: 'Android', icon: 'https://img.icons8.com/?size=100&id=11138&format=png&color=000000' }
-      ] 
+      ]
     },
-    { 
-      category: 'Tools', 
+    {
+      category: 'Tools',
       items: [
         { name: 'Git', icon: 'https://img.icons8.com/?size=100&id=20906&format=png&color=000000' },
         { name: 'GitHub', icon: 'https://img.icons8.com/?size=100&id=16318&format=png&color=000000' },
         // { name: 'Docker', icon: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000' },
         // { name: 'AWS', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
         { name: 'VS Code', icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000' }
-      ] 
+      ]
     },
   ];
 
@@ -161,7 +161,7 @@ const About = () => {
       id: 6,
       title: "HTML, CSS Workshop 5 Days",
       issuer: "Lets Upgrade",
-      year: "2024", 
+      year: "2024",
       link: "https://drive.google.com/file/d/1pZiWhIDVvsXSMxVPnZAoSW4q9bKG287b/view?usp=sharing"
     }
   ];
@@ -177,12 +177,12 @@ const About = () => {
         <meta name="author" content="Jay Kumar Sharma" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="language" content="English" />
-        <meta name="revisit-after" content="7 days" />  
+        <meta name="revisit-after" content="7 days" />
         <meta name="rating" content="General" />
         <meta name="distribution" content="Global" />
         <meta name="coverage" content="Worldwide" />
         <meta name="target" content="all" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/about" />
@@ -194,7 +194,7 @@ const About = () => {
         <meta property="og:image:alt" content="About Jay Kumar Sharma - Full Stack Developer" />
         <meta property="og:site_name" content="Jay Kumar Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/about" />
@@ -204,13 +204,13 @@ const About = () => {
         <meta property="twitter:image:alt" content="About Jay Kumar Sharma - Full Stack Developer" />
         <meta property="twitter:creator" content="@jaysharma" />
         <meta property="twitter:site" content="@jaysharma" />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href="https://jaysharma.space/about" />
-        
+
         {/* Structured Data / JSON-LD */}
         <script type="application/ld+json">
-        {`
+          {`
         {
           "@context": "https://schema.org",
           "@type": "Person",
@@ -282,29 +282,29 @@ const About = () => {
         `}
         </script>
       </Helmet>
-      
+
       {/* Navbar */}
-      <ModernNavbar 
-        onHomeClick={handleNavigateToHome} 
-        onAboutClick={() => {}} 
+      <ModernNavbar
+        onHomeClick={handleNavigateToHome}
+        onAboutClick={() => { }}
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}
         onProjectClick={handleNavigateToProject}
-        currentPage="about" 
+        currentPage="about"
       />
-      
+
       {/* Hero Section - Add top padding to account for fixed navbar */}
       <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* Left Content */}
-            <motion.div 
+            <motion.div
               className="flex-1"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -312,13 +312,13 @@ const About = () => {
               >
                 About Me
               </motion.h1>
-              <motion.div 
+              <motion.div
                 className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mb-6"
                 initial={{ width: 0 }}
                 animate={{ width: 80 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               ></motion.div>
-              <motion.p 
+              <motion.p
                 className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -326,7 +326,7 @@ const About = () => {
               >
                 Hello! I'm Jay Kumar Sharma, a passionate web developer with expertise in modern frontend and backend technologies. I love creating beautiful, functional, and user-friendly websites.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -334,13 +334,13 @@ const About = () => {
               >
                 With hands-on experience in web development, I specialize in creating visually appealing, responsive, and user-friendly interfaces. I have a keen eye for design and a deep understanding of Tailwind CSS to build modern and efficient web applications.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex flex-wrap gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                <Button 
+                <Button
                   className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 shadow-lg"
                   onClick={handleNavigateToContact}
                 >
@@ -348,29 +348,29 @@ const About = () => {
                 </Button>
               </motion.div>
             </motion.div>
-            
+
             {/* Right Content - Profile Image CardSwipe */}
-            <motion.div 
+            <motion.div
               className="flex-1 flex justify-center md:justify-end"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             >
-              <motion.div 
+              <motion.div
                 className="relative w-64 h-64 md:w-80 md:h-80"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg transform rotate-6"
                   animate={{ rotate: [6, 8, 6] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 ></motion.div>
                 <div className="relative z-10 w-full h-full">
-                  <CardSwipe 
-                    images={profileImages} 
-                    autoplayDelay={3000} 
-                    slideShadows={false} 
+                  <CardSwipe
+                    images={profileImages}
+                    autoplayDelay={3000}
+                    slideShadows={false}
                   />
                 </div>
               </motion.div>
@@ -379,25 +379,25 @@ const About = () => {
         </div>
       </section>
 
-   {/* GitHub Stats Section */}
-        <GithubStats />
+      {/* GitHub Stats Section */}
+      <GithubStats />
 
       {/* Personal Info Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Personal Information</h2>
+
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div 
+            <motion.div
               className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -410,11 +410,11 @@ const About = () => {
                 I am a dedicated and enthusiastic web developer with a passion for creating responsive and user-friendly websites. I have a strong understanding of frontend technologies.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-              With hands-on experience in web development, I specialize in creating visually appealing, responsive, and user-friendly interfaces. 
+                With hands-on experience in web development, I specialize in creating visually appealing, responsive, and user-friendly interfaces.
               </p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -422,47 +422,13 @@ const About = () => {
               viewport={{ once: true }}
               whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Expertise</h3>
-              <ul className="space-y-4">
-                <motion.li 
-                  className="flex items-start gap-4"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.div 
-                    className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <FaCode className="text-blue-500 text-xl" />
-                  </motion.div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Frontend Development</h4>
-                    <p className="text-gray-600 dark:text-gray-300">Creating responsive and interactive websites using modern technologies like React, HTML5, CSS3, and JavaScript.</p>
-                  </div>
-                </motion.li>
-                <motion.li 
-                  className="flex items-start gap-4"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.div 
-                    className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <FaLaptopCode className="text-blue-500 text-xl" />
-                  </motion.div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Backend Development</h4>
-                    <p className="text-gray-600 dark:text-gray-300">Building robust server-side applications using Node.js, Express, and MongoDB.</p>
-                  </div>
-                </motion.li>
-              </ul>
+              <video
+                className="w-full h-auto rounded-lg shadow-lg"
+                controls
+                src="/expertise.mp4"
+              >
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
           </div>
         </div>
@@ -508,8 +474,8 @@ const About = () => {
                       className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 rounded-full px-3 py-2 flex items-center justify-between"
                     >
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{skill.name}</span>
-                      <img 
-                        src={skill.icon} 
+                      <img
+                        src={skill.icon}
                         alt={skill.name}
                         className="w-5 h-5 object-contain"
                       />
@@ -525,7 +491,7 @@ const About = () => {
       {/* Education & Experience Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -535,7 +501,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Education & Experience</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Education */}
             <motion.div
@@ -544,14 +510,14 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <motion.div 
+                <motion.div
                   className="bg-gradient-to-r from-blue-100 to-teal-100 p-4 rounded-full"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
@@ -560,18 +526,18 @@ const About = () => {
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Education</h3>
               </motion.div>
-              
+
               <div className="space-y-8">
                 {education.map((item, index) => (
-                  <motion.div 
-                    key={item.id} 
+                  <motion.div
+                    key={item.id}
                     className="border-l-4 border-blue-500 pl-6 py-2"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
                       whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                       transition={{ duration: 0.3 }}
@@ -587,7 +553,7 @@ const About = () => {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Experience */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -595,14 +561,14 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <motion.div 
+                <motion.div
                   className="bg-gradient-to-r from-blue-100 to-teal-100 p-4 rounded-full"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.2 }}
@@ -611,18 +577,18 @@ const About = () => {
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Experience</h3>
               </motion.div>
-              
+
               <div className="space-y-8">
                 {experience.map((item, index) => (
-                  <motion.div 
-                    key={item.id} 
+                  <motion.div
+                    key={item.id}
                     className="border-l-4 border-blue-500 pl-6 py-2"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
                       whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
                       transition={{ duration: 0.3 }}
@@ -645,7 +611,7 @@ const About = () => {
       {/* Certifications Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -655,28 +621,28 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto mb-8"></div>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certifications.map((cert, index) => (
-              <motion.div 
-                key={cert.id} 
+              <motion.div
+                key={cert.id}
                 className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  y: -10, 
+                whileHover={{
+                  y: -10,
                   scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="flex items-center gap-4 mb-4"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-gradient-to-r from-blue-100 to-teal-100 p-3 rounded-full"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
@@ -688,11 +654,11 @@ const About = () => {
                 <div className="flex justify-between items-center mb-3">
                   <p className="text-gray-600 dark:text-gray-300">{cert.issuer}</p>
                   <p className="bg-gradient-to-r from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 text-sm px-3 py-1 rounded-full">{cert.year}</p>
-                </div>             
-                <motion.a 
-                  href={cert.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                </div>
+                <motion.a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors flex items-center gap-2 text-sm mt-2"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
@@ -702,23 +668,23 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-          
+
           {/* <div className="text-center mt-12">
             <Button className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
               View All Certificates
             </Button>
           </div> */}
-        
+
         </div>
 
       </section>
 
-   
+
 
       {/* Toggle Button */}
-      <ToggleButton 
-        onHomeClick={handleNavigateToHome} 
-        onAboutClick={() => {}} 
+      <ToggleButton
+        onHomeClick={handleNavigateToHome}
+        onAboutClick={() => { }}
         onServiceClick={handleNavigateToServices}
         onContactClick={handleNavigateToContact}
       />
