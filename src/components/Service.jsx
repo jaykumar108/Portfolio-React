@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -13,8 +13,42 @@ import {
 } from 'react-icons/fa';
 import Button from './Button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { Spinner } from '@/components/ui/spinner';
 import ModernNavbar from './ModernNavbar';
 import ToggleButton from './ToggleButton';
+
+// Image loader component
+const ImageWithLoader = ({ src, alt, className }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative w-full h-full">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700">
+          <Spinner className="size-8 text-blue-500" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        onLoad={() => setIsLoading(false)}
+        onError={() => {
+          setIsLoading(false);
+          setHasError(true);
+        }}
+        style={{ display: isLoading ? 'none' : 'block' }}
+      />
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">
+          Failed to load image
+        </div>
+      )}
+    </div>
+  );
+};
+
 
 const Service = () => {
   const navigate = useNavigate();
@@ -360,7 +394,7 @@ const Service = () => {
                 <div className="p-4">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <ImageWithLoader
                         src="/fullstackdevelopment.png"
                         alt="Full Stack Development"
                         className="w-full h-full object-cover"
@@ -391,7 +425,7 @@ const Service = () => {
                 <div className="p-4">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <ImageWithLoader
                         src="/App_development_React_Native.png"
                         alt="App Development"
                         className="w-full h-full object-cover"
@@ -426,7 +460,7 @@ const Service = () => {
                 <div className="p-4">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <ImageWithLoader
                         src="/wordpress.png"
                         alt="WordPress Development"
                         className="w-full h-full object-cover"
@@ -461,7 +495,7 @@ const Service = () => {
                 <div className="p-4">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <ImageWithLoader
                         src="landing.png"
                         alt="Landing Pages"
                         className="w-full h-full object-cover"
@@ -496,7 +530,7 @@ const Service = () => {
                 <div className="p-4">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <ImageWithLoader
                         src="/ecommerce.png"
                         alt="E-Commerce Applications"
                         className="w-full h-full object-cover"
@@ -571,7 +605,7 @@ const Service = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                <img
+                <ImageWithLoader
                   src="/responsive_design_feature_1766325516845.png"
                   alt="Responsive Design Illustration"
                   className="max-w-sm mx-auto h-auto rounded-lg shadow-lg"
@@ -605,7 +639,7 @@ const Service = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                <img
+                <ImageWithLoader
                   src="/react_framework_feature_1766325542500.png"
                   alt="React Framework Illustration"
                   className="max-w-sm mx-auto h-auto rounded-lg shadow-lg"
@@ -639,7 +673,7 @@ const Service = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                <img
+                <ImageWithLoader
                   src="/App_development_React_Native.png"
                   alt="App Development React Native Illustration"
                   className="max-w-sm mx-auto h-auto rounded-lg shadow-lg"
@@ -673,7 +707,7 @@ const Service = () => {
                 </ul>
               </div>
               <div className="flex-1">
-                <img
+                <ImageWithLoader
                   src="/portfolio_making_feature_1766325595708.png"
                   alt="Portfolio Making Illustration"
                   className="max-w-sm mx-auto h-auto rounded-lg shadow-lg"
