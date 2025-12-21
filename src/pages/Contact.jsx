@@ -75,7 +75,7 @@ const ContactForm = () => {
     } else if (formData.message.length > 600) {
       errors.message = "Message must be maximum 600 characters";
     }
-    
+
     // Validate phone number (max 10 digits)
     if (formData.phone && formData.phone.trim()) {
       const phoneDigits = formData.phone.replace(/\D/g, ''); // Remove non-digits
@@ -83,7 +83,7 @@ const ContactForm = () => {
         errors.phone = "Phone number must be maximum 10 digits";
       }
     }
-    
+
     // Validate file if uploaded
     if (formData.file) {
       const maxSize = 5 * 1024 * 1024; // 5MB
@@ -91,13 +91,13 @@ const ContactForm = () => {
         errors.file = "File size must be less than 5MB";
       }
     }
-    
+
     return errors;
   };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    
+
     if (name === 'file' && files && files.length > 0) {
       const file = files[0];
       setFormData({
@@ -160,7 +160,7 @@ const ContactForm = () => {
       try {
         // Send contact form data to API
         await sendContactForm(formData);
-        
+
         // Show success toast
         toast.success('Thank you for contacting! I will get back to you shortly.', {
           duration: 5000,
@@ -173,10 +173,10 @@ const ContactForm = () => {
             fontSize: '16px',
           },
         });
-        
+
         // Show thank you message
         setShowThankYou(true);
-        
+
         // Reset form data
         setFormData({
           name: "",
@@ -195,7 +195,7 @@ const ContactForm = () => {
         console.error('Failed to send contact form:', error);
         const errorMsg = error.message || "Failed to send message. Please try again later.";
         setErrorMessage(errorMsg);
-        
+
         // Show error toast
         toast.error(errorMsg, {
           duration: 5000,
@@ -246,7 +246,7 @@ const ContactForm = () => {
             />
             {formErrors.name && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.name}</p>}
           </div>
-          
+
           <div>
             <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Email <span className="text-red-500">*</span></label>
             <input
@@ -261,7 +261,7 @@ const ContactForm = () => {
             />
             {formErrors.email && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.email}</p>}
           </div>
-          
+
           <div>
             <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Phone Number</label>
             <input
@@ -269,14 +269,14 @@ const ContactForm = () => {
               id="phone"
               name="phone"
               value={formData.phone}
-              
+
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="9876543210"
               disabled={isLoading}
             />
           </div>
-          
+
           <div>
             <label htmlFor="file" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Upload File <span className="text-gray-500 dark:text-gray-400 text-xs ml-2"> (Optional) </span></label>
             <div className="relative">
@@ -290,11 +290,10 @@ const ContactForm = () => {
               />
               <label
                 htmlFor="file"
-                className={`flex items-center justify-center w-full px-4 py-3 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${
-                  formErrors.file 
-                    ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
+                className={`flex items-center justify-center w-full px-4 py-3 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${formErrors.file
+                    ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
                     : 'border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 bg-gray-50 dark:bg-gray-700/50'
-                } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <FaUpload className="mr-2 text-gray-500 dark:text-gray-400" />
                 <span className="text-sm text-gray-600 dark:text-gray-300">
@@ -318,7 +317,7 @@ const ContactForm = () => {
             {formErrors.file && <p className="text-red-500 dark:text-red-400 text-sm mt-1">{formErrors.file}</p>}
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Max file size: 5MB</p>
           </div>
-          
+
           <div className="md:col-span-2">
             <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message <span className="text-red-500">*</span></label>
             <textarea
@@ -338,10 +337,10 @@ const ContactForm = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="mt-6 text-center">
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
             disabled={isLoading}
           >
@@ -406,7 +405,7 @@ const Contact = () => {
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/contact" />
@@ -415,7 +414,7 @@ const Contact = () => {
         <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="og:site_name" content="Jay Kumar Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/contact" />
@@ -424,21 +423,21 @@ const Contact = () => {
         <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="twitter:creator" content="@jaysharma" />
         <meta property="twitter:site" content="@jaysharma" />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href="https://jaysharma.space/contact" />
       </Helmet>
-      
+
       {/* Navbar */}
-      <ModernNavbar 
-        onHomeClick={handleNavigateToHome} 
-        onAboutClick={handleNavigateToAbout} 
+      <ModernNavbar
+        onHomeClick={handleNavigateToHome}
+        onAboutClick={handleNavigateToAbout}
         onServiceClick={handleNavigateToServices}
-        onContactClick={() => {}} 
+        onContactClick={() => { }}
         onProjectClick={handleNavigateToProject}
-        currentPage="contact" 
+        currentPage="contact"
       />
-      
+
       {/* Hero Section */}
       <section className="pt-28 pb-20 md:pt-32 md:pb-28 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
@@ -463,8 +462,8 @@ const Contact = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Let's Connect</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-8">
-                  I'm always excited to work on new projects and collaborate with amazing people. 
-                  Whether you have a question, want to discuss a project, or just want to say hello, 
+                  I'm always excited to work on new projects and collaborate with amazing people.
+                  Whether you have a question, want to discuss a project, or just want to say hello,
                   I'd love to hear from you!
                 </p>
               </div>
@@ -528,11 +527,11 @@ const Contact = () => {
       </section>
 
       {/* Toggle Button */}
-      <ToggleButton 
-        onHomeClick={handleNavigateToHome} 
-        onAboutClick={handleNavigateToAbout} 
+      <ToggleButton
+        onHomeClick={handleNavigateToHome}
+        onAboutClick={handleNavigateToAbout}
         onServiceClick={handleNavigateToServices}
-        onContactClick={() => {}} 
+        onContactClick={() => { }}
       />
     </div>
   );

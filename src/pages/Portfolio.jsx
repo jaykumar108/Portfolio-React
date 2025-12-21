@@ -11,6 +11,7 @@ import Projects from "../components/Projects";
 import ToggleButton from "../components/ToggleButton";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 import { CardContainer, CardBody, CardItem } from "../components/ui/3d-card";
+import { Spinner } from "../components/ui/spinner";
 
 // Add custom CSS for typing animation
 const typingStyles = `
@@ -453,6 +454,7 @@ const ContactForm = () => {
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [profileImageLoaded, setProfileImageLoaded] = useState(false);
   const navigate = useNavigate();
 
   // Scroll to top when component mounts
@@ -627,11 +629,20 @@ const Portfolio = () => {
                     rotateZ={0}
                     className="relative"
                   >
-                    <img
-                      src="/profile1.png"
-                      alt="Jay Sharma"
-                      className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-1 border-white"
-                    />
+                    <div className="relative w-48 h-48 md:w-64 md:h-64">
+                      {!profileImageLoaded && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full">
+                          <Spinner className="size-8 text-blue-500" />
+                        </div>
+                      )}
+                      <img
+                        src="/profile1.png"
+                        alt="Jay Sharma"
+                        className="rounded-full shadow-xl w-48 h-48 md:w-64 md:h-64 object-cover border-1 border-white"
+                        onLoad={() => setProfileImageLoaded(true)}
+                        style={{ display: profileImageLoaded ? 'block' : 'none' }}
+                      />
+                    </div>
                   </CardItem>
                 </CardBody>
               </CardContainer>
