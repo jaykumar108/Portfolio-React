@@ -614,8 +614,8 @@ const Portfolio = () => {
       {/* Main Content - Add top padding to account for fixed navbar */}
       <main className="flex-grow pt-24 md:pt-32">
         {/* middle Section */}
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container mx-auto px-6 min-h-[70vh] flex items-center mb-20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
             {/* Profile Image with 3D Card Effect - Always first on mobile, right on desktop */}
             <div className="w-full md:w-auto flex justify-center md:justify-end md:order-2">
               <CardContainer className="py-0" containerClassName="py-0">
