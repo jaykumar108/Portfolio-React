@@ -475,11 +475,8 @@ const Portfolio = () => {
   };
 
   const handleNavigateToProject = () => {
-    // Scroll to project section on the same page
-    const projectSection = document.getElementById('project-section');
-    if (projectSection) {
-      projectSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Navigate to projects page
+    navigate('/projects');
   };
 
   const handleNavigateToTools = () => {

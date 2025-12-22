@@ -9,6 +9,7 @@ import Service from './components/Service'
 import Contact from './pages/Contact'
 import NotFound from './components/NotFound'
 import QuestionPaperDemo from './pages/QuestionPaperDemo'
+import ProjectsView from './pages/projects/ProjectsView'
 import Loading from './components/ui/loading'
 import emailjs from 'emailjs-com'
 import { ThemeProvider } from './context/ThemeContext'
@@ -67,7 +68,7 @@ function App() {
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jaysharma.space/" />
@@ -76,27 +77,27 @@ function App() {
         <meta property="og:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
         <meta property="og:site_name" content="Jay Sharma Portfolio" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jaysharma.space/" />
         <meta property="twitter:title" content="Jay Sharma - Full Stack Developer | Portfolio" />
         <meta property="twitter:description" content="Professional portfolio of Jay Sharma, a skilled Full Stack Developer specializing in React, Node.js, and modern web technologies." />
         <meta property="twitter:image" content="https://chpqznnwxaewksfxfqmk.supabase.co/storage/v1/object/public/resumes//profile-photoaidcom-cropped.png" />
-        
+
         {/* Additional SEO Meta Tags */}
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Jay Sharma Portfolio" />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href="https://jaysharma.space/" />
-        
+
         {/* Structured Data / JSON-LD */}
         <script type="application/ld+json">
-        {`
+          {`
         {
           "@context": "https://schema.org",
           "@type": "Person",
@@ -134,20 +135,21 @@ function App() {
         `}
         </script>
       </Helmet>
-      
+
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<ProjectsView />} />
         <Route path="/question-paper" element={<QuestionPaperDemo />} />
         <Route path="/tools" element={<QuestionPaperDemo />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/about.html" element={<About />} />
       </Routes>
-      
+
       {/* Toast Notifications */}
-      <Toaster 
+      <Toaster
         position="top-center"
         toastOptions={{
           duration: 3000,
