@@ -2,6 +2,31 @@
 export const projectsData = [
     {
         id: 1,
+        title: "Healthcare Website",
+        shortDescription: "Modern healthcare website for comprehensive medical services",
+        fullDescription: "A modern healthcare website providing comprehensive medical services, appointment booking, and patient care information with an intuitive user interface. Features include online consultations, appointment scheduling, patient records management, and health information resources.",
+        image: "https://res.cloudinary.com/dzgr4iqt7/image/upload/v1766582351/helthcare_qjy501.png",
+        category: "Full Stack",
+        technologies: [
+            { name: "React.js", color: "blue" },
+            { name: "Tailwind CSS", color: "cyan" },
+            { name: "Node.js", color: "green" },
+            { name: "MongoDB", color: "teal" }
+        ],
+        features: [
+            "Online appointment booking system",
+            "Patient registration and profile management",
+            "Doctor consultation scheduling",
+            "Medical records management",
+            "Health information and resources",
+            "Responsive and accessible design"
+        ],
+        liveUrl: "https://helthcare-webisite.vercel.app/",
+        githubUrl: "#",
+        year: "2024"
+    },
+    {
+        id: 2,
         title: "E-Learning Platform",
         shortDescription: "Interactive online learning platform for accessible education",
         fullDescription: "E-Learning Website is an interactive online learning platform designed to make education accessible, engaging, and effective for everyone. It features course management, video lectures, quizzes, progress tracking, and a modern user interface.",
@@ -27,7 +52,7 @@ export const projectsData = [
         year: "2024"
     },
     {
-        id: 2,
+        id: 3,
         title: "Career Portal",
         shortDescription: "Job application and management portal",
         fullDescription: "A comprehensive career portal where users can apply for jobs and administrators can manage job applications through an intuitive dashboard. Features include job posting, application tracking, and candidate management.",
@@ -53,7 +78,7 @@ export const projectsData = [
         year: "2024"
     },
     {
-        id: 3,
+        id: 4,
         title: "VS Woodshop",
         shortDescription: "Modern landing page for woodshop products",
         fullDescription: "A modern, responsive landing page for woodshop products featuring a sleek design and seamless user experience. Showcases products with high-quality images and detailed descriptions.",
@@ -76,6 +101,33 @@ export const projectsData = [
         ],
         liveUrl: "https://vswoodshop.vercel.app/",
         githubUrl: null,
+        year: "2024"
+    },
+    {
+        id: 5,
+        title: "Portfolio Website",
+        shortDescription: "Personal portfolio showcasing skills and projects",
+        fullDescription: "A modern, responsive portfolio website showcasing my skills, projects, and experience as a Full Stack Developer. Built with React and featuring a clean, professional design with smooth animations and interactive elements. The site includes sections for about me, services, projects showcase, and contact information.",
+        image: "https://res.cloudinary.com/dzgr4iqt7/image/upload/v1766582837/Screenshot_2025-12-24_185650_wc0ahz.png",
+        category: "Frontend",
+        technologies: [
+            { name: "React.js", color: "blue" },
+            { name: "Tailwind CSS", color: "cyan" },
+            { name: "React Router", color: "red" },
+            { name: "React Icons", color: "indigo" },
+            { name: "Vercel", color: "indigo" }
+        ],
+        features: [
+            "Responsive and mobile-first design",
+            "Dark mode support",
+            "Smooth animations and transitions",
+            "Project showcase with filtering",
+            "Skills and experience display",
+            "Contact form integration",
+            "SEO optimized with meta tags"
+        ],
+        liveUrl: "https://portfolio.jaysharma.space/",
+        githubUrl: "#",
         year: "2024"
     }
 ];
